@@ -1,0 +1,2 @@
+/usr/bin/ar qc libuser_lib.a CMakeFiles/user_lib.dir/user.cc.o
+/usr/bin/ranlib libuser_lib.a
