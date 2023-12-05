@@ -29,43 +29,26 @@ int main(int argc, char const *argv[])
         switch (key)
         {
         case KEY_UP:
-            
+            printf("keyup\n");
             break;
 
         case KEY_DOWN:
-            
+            printf("keydown\n");
             break;
         
         case 10:
-            
+            printf("enter\n");
             break;
 
         case 27:
-            
+            printf("esc\n");
             break;
+
         default:
             break;
         }
-
-
-
     }
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    S
     #ifdef _WIN32
     #else
     endwin(); //Finaliza la biblioteca curses.h
