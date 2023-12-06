@@ -1,47 +1,46 @@
 #include <iostream>
-#include <ncurses.h>
+#include <vector>
+#include "app.h"
 
 int main(int argc, char const *argv[])
 {
-    //Inicio de preparacion para gestion de teclas
-    initscr();
-    cbreak();
-    noecho();
-    keypad(stdscr, TRUE);
-    //Fin de preparacion
+    std::vector<std::string> opciones={"Iniciar Sesion", "Registrarse", "Ver Actividades sin iniciar sesion", "Salir"};
 
     int key, status = 1;
 
     while (status == 1)
     {
-        printf("COSAS\n");
+        system("clear");
+        printf("*****************************\n*       UCOACTIVIDADES      *\n*****************************\n");
+        for (int i = 0; i < opciones.size(); i++)
+        {
+            printf("%s\n", opciones[i].c_str());
+        }
+        
+        std::cin>>key;
 
-        key = getch();
         switch (key)
         {
-        case KEY_UP:
-            printf("keyup\n");
-            break;
+        case 1:
+            MenuInicioSesion();
+        break;
 
-        case KEY_DOWN:
-            printf("keydown\n");
-            break;
+        case 2:
+    
+        break;
         
-        case 10:
-            printf("enter\n");
-            break;
+        case 3:
+            
+        break;
 
-        case 27:
-            printf("esc\n");
-            status=0;
-            break;
+        case 4:
+            printf("Saliendo del programa\n");
+            return 0;
+        break;
 
         default:
-            break;
+            //void
+        break;
         }
     }
-
-    endwin(); //Cierra la libreria antes de salir del programa
-
-    return 0;
 }
