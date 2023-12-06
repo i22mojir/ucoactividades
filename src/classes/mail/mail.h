@@ -9,7 +9,6 @@ private:
 std::string title_;
 
 
-
 public:
 
 

@@ -1,31 +1,22 @@
 #include <iostream>
-
-//Control de sistemas operativos
-#ifdef _WIN32
-#include <conio.h> //Biblioteca de reconocimiento de teclas para windows
-#else
-#include <curses.h> //Bliotecas de reconocimiento de teclas para Linux
-#endif
-
+#include <ncurses.h>
 
 int main(int argc, char const *argv[])
 {
-    #ifdef _WIN32
-    #else
-    initscr(); //Inicia la biblioteca curses.h
-    raw(); //Desactiva buffer de linea
-    keypad(stdscr, TRUE); //Activa las teclas especiales
-    #endif
+    //Inicio de preparacion para gestion de teclas
+    initscr();
+    cbreak();
+    noecho();
+    keypad(stdscr, TRUE);
+    //Fin de preparacion
 
-    int key;
+    int key, status = 1;
 
-    while (true)
+    while (status == 1)
     {
         printf("COSAS\n");
 
         key = getch();
-
-
         switch (key)
         {
         case KEY_UP:
@@ -42,17 +33,15 @@ int main(int argc, char const *argv[])
 
         case 27:
             printf("esc\n");
+            status=0;
             break;
 
         default:
             break;
         }
     }
-    S
-    #ifdef _WIN32
-    #else
-    endwin(); //Finaliza la biblioteca curses.h
-    #endif
+
+    endwin(); //Cierra la libreria antes de salir del programa
 
     return 0;
 }
