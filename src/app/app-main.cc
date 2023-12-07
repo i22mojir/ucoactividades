@@ -5,9 +5,9 @@ int main(int argc, char const *argv[])
 {
     std::vector<std::string> opciones={"1. Iniciar Sesion", "2. Registrarse", "3. Ver Actividades sin iniciar sesion", "4. Salir"};
 
-    int key, status = 1;
+    int key;
 
-    while (status == 1)
+    while (1)
     {
         system("clear");
         printf("*****************************\n*       UCOACTIVIDADES      *\n*****************************\n");
@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
         break;
         
         case 3:
-            MenuVerActividades();
+            MenuVerActividades(0);
         break;
 
         case 4:
@@ -44,6 +44,7 @@ int main(int argc, char const *argv[])
             sleep(1);
             system("clear");
             printf("Saliendo del programa ■■■\n");
+            system("clear");
             return 0;
         break;
 

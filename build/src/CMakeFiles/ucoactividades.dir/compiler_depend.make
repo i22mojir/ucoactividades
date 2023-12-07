@@ -184,7 +184,6 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: ../src/app/app-main.cc \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  ../src/classes/user/user.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -192,7 +191,8 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: ../src/app/app-main.cc \
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h
+  /usr/include/linux/close_range.h \
+  ../src/classes/user/user.h
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/stdc-predef.h \
@@ -377,6 +377,14 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
   ../src/classes/user/user.h
 
 
