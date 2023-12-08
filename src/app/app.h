@@ -16,5 +16,6 @@ void MenuVerActividades(int user_is_registered); //Si el parametro es 0 no se po
 void MenuGeneral(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
 void VerInformacionUsuario(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
 void MenuGeneralAdmin(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
+void VerListaCorreos(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
 
 #endif

@@ -21,14 +21,17 @@ int main(int argc, char const *argv[])
         switch (key)
         {
         case 1:
+            std::cin.ignore(1000, '\n');
             MenuInicioSesion();
         break;
 
         case 2:
+            std::cin.ignore(1000, '\n');
             MenuRegistro();    
         break;
         
         case 3:
+            std::cin.ignore(1000, '\n');
             MenuVerActividades(0);
         break;
 
@@ -53,4 +56,6 @@ int main(int argc, char const *argv[])
         break;
         }
     }
+
+    std::cin.ignore(1000, '\n');
 }
