@@ -92,23 +92,55 @@ void VerInformacionUsuario(User generated_user)
     printf("/Para cambiar la contraseña pongase en contacto con un administrador/\n");
 
     printf("\n(Pulsa ENTER para volver al atras)\n");
-    std::cin.get();    
+    std::cin.get();
 }
 
 void VerListaCorreos(User generated_user)
 {
-    std::vector<FILE> file_vector;
+    std::vector<std::string> mail_vector;
     int selected_option;
 
-    for (int i = 0; i < 0; i++)
+    std::string path="../data/maildata"; //Especificacion de directorio
+    system("clear");
+    for (const auto it: fs::directory_iterator(path)) //Lectura de archivos del directorio al vector (nombre archivo) (utiliza <filesystem>)
     {
-        /* Recorre todos los archivos para encontrar a los que conincidan con el nombre del usuario o su interes */
+        if (fs::is_regular_file(it))
+        {
+            mail_vector.push_back(it.path().filename().string());
+        }
+    }
+
+    printf("*****************************\n*          CORREO           *\n*****************************\n");
+    for (int i = 0; i < mail_vector.size(); i++) //Muestra el vector
+    {
+        printf("%i. %s\n", (i+1), mail_vector[i].c_str());
     }
     
-    printf("\nSeleccione un correo para verlo:");
+    printf("\nIndique numero del correo para verlo:");
     std::cin>>selected_option;
 
+    if (selected_option < 1 || selected_option > mail_vector.size()) //De esta forma se asegura de que solo se abren ficheros existentes
+    {
+        system("clear");
+        printf("(ERROR) Se ha especificado un correo inexistente\n\nPresione ENTER para volver atras\n");
+        std::cin.get();
+        return;
+    }
+    std::string file_path = path +  mail_vector[(selected_option-1)].c_str();
+    FILE* file = fopen(file_path.c_str(), "r");
 
+    if (file == NULL)
+    {
+        system("clear");
+        printf("DEBUG: Se abre la pos: %i / con nombre de archivo: %s\n", (selected_option-1),file_path.c_str());
+        printf("Ha ocurrido un error al abrir el correo\nPresione ENTER para volver atras\n");
+        std::cin.get();
+        return;
+    }
+    
+    fprintf(file, "Titulo: %s\nPara:%s\nMensaje:%s");
+
+    fclose(file);
 
 }
 
@@ -145,7 +177,7 @@ void MenuGeneral(User generated_user)
 
             case 2:
                 std::cin.ignore(1000, '\n');
-
+                VerListaCorreos(generated_user);
             break;
 
             case 3:
@@ -154,6 +186,7 @@ void MenuGeneral(User generated_user)
             break;
 
             case 4:
+                std::cin.ignore(1000, '\n');
                 system("clear");
                 printf("Cerrando Sesión ...\n");
                 sleep(1);
@@ -196,7 +229,7 @@ void MenuGeneralAdmin(User generated_user)
 
         case 3:
             std::cin.ignore(1000, '\n');
-            
+            VerListaCorreos(generated_user);
         break;
 
         case 4:
