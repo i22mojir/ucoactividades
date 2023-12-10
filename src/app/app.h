@@ -5,9 +5,9 @@
 #include <vector>
 #include <string>
 #include <unistd.h>
+#include <fstream>
 #include <filesystem> //Leer archivos del directorio
 namespace fs = std::filesystem;
-#include <fstream>
 #include "../classes/user/user.h"
 #include "../classes/mail/mail.h"
 #include "../classes/activity/activity.h"

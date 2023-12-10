@@ -19,6 +19,8 @@ void MenuInicioSesion()
         std::cin>>password;
         generated_user.SetPassword(password);
 
+        std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
+
     //Comprobacion de datos, sino la variable de intentos se decrementa
     MenuGeneral(generated_user);
 }
@@ -47,6 +49,8 @@ void MenuRegistro()
     printf("Contraseña:");
     std::cin>>password;
     generated_user.SetPassword(password);
+
+    std::cin.ignore(1000, '\n');
 
     //Comprobacion de base de datos si existe y comprobacion de contraseña segura
 
@@ -97,6 +101,7 @@ void VerInformacionUsuario(User generated_user)
 
 void VerListaCorreos(User generated_user)
 {
+    Mail generated_mail;
     std::vector<std::string> mail_vector;
     int selected_option;
 
@@ -126,22 +131,36 @@ void VerListaCorreos(User generated_user)
         std::cin.get();
         return;
     }
-    std::string file_path = path +  mail_vector[(selected_option-1)].c_str();
-    FILE* file = fopen(file_path.c_str(), "r");
 
-    if (file == NULL)
+    std::string file_path = "../../data/maildata/" + mail_vector[(selected_option-1)];
+    std::cout<<"DEBUG: "<<file_path<<"\n";
+    std::ifstream mail_file(file_path.c_str()); //Abrir archivo modo lectura
+
+    if (mail_file.is_open())
+    {
+        std::string temp_title, temp_to_person, temp_desc;
+    
+        std::getline(file, temp_title);
+        std::getline(file, temp_to_person);
+        std::getline(file, temp_desc);
+
+        generated_mail.SetTitle(temp_title);
+        generated_mail.SetToPerson(temp_to_person);
+        generated_mail.SetDesc(temp_desc);
+
+        printf("Titulo: %s\nPara: %s\nDescripcion: %s\n\n", generated_mail.GetTitle().c_str(), generated_mail.GetToPerson().c_str(), generated_mail.GetDesc().c_str());
+
+        printf("Presiona ENTER para volver al menu\n");
+        std::cin.get();
+
+        mail_file.close();
+    }else
     {
         system("clear");
-        printf("DEBUG: Se abre la pos: %i / con nombre de archivo: %s\n", (selected_option-1),file_path.c_str());
         printf("Ha ocurrido un error al abrir el correo\nPresione ENTER para volver atras\n");
         std::cin.get();
         return;
     }
-    
-    fprintf(file, "Titulo: %s\nPara:%s\nMensaje:%s");
-
-    fclose(file);
-
 }
 
 
