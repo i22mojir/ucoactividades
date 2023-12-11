@@ -60,7 +60,7 @@ void MenuVerActividades(int user_is_registered)
 {
     system("clear");
     printf("*****************************\n*   LISTA DE ACTIVIDADES    *\n*****************************\n");
-    std::string selected_activity;
+    char selected_activity;
     std::vector<FILE> vector; //Vector de archivos
 
     for (int i = 0; i < vector.size(); i++)
@@ -69,6 +69,11 @@ void MenuVerActividades(int user_is_registered)
     }
     printf("\nSeleccione actividad:");
     std::cin>>selected_activity;
+
+    if (isdigit(selected_activity) == 0) //Si no es un numero no hace nada
+    {
+        return;        
+    }
 
     //Si el nombre seleccionado coincide con una actividad se introduce en el menu
 
@@ -82,9 +87,6 @@ void MenuVerActividades(int user_is_registered)
     {
         //Ver detalle como administrador
     }
-    
-
-
 }
 
 void VerInformacionUsuario(User generated_user)
@@ -102,7 +104,7 @@ void VerListaCorreos(User generated_user)
 {
     Mail generated_mail;
     std::vector<std::string> mail_vector;
-    int selected_option;
+    char selected_option;
 
     std::string path="../data/maildata"; //Especificacion de directorio
     system("clear");
@@ -122,6 +124,11 @@ void VerListaCorreos(User generated_user)
     
     printf("\nIndique numero del correo para verlo:");
     std::cin>>selected_option;
+
+    if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
+    {
+        return;        
+    }
 
     if (selected_option < 1 || selected_option > mail_vector.size()) //De esta forma se asegura de que solo se abren ficheros existentes
     {
@@ -225,7 +232,7 @@ void MenuGeneral(User generated_user)
         MenuGeneralAdmin(generated_user);
     }else
     {
-        int selected_option;
+        char selected_option;
         while (1)
         {
             system("clear");
@@ -233,25 +240,29 @@ void MenuGeneral(User generated_user)
             printf("1. Ver Actividades\n2. Ver Correo\n3. Ver Mi Usuario\n4. Cerrar Sesion\n");        
 
             std::cin>>selected_option;
+            if(isdigit(selected_option) == 0) //Si no es un numero no hace nada
+            {
+                selected_option = 99; //Va a default        
+            }
 
             switch (selected_option)
             {
-            case 1:
+            case '1':
                 std::cin.ignore(1000, '\n');
                 MenuVerActividades(1);
             break;
 
-            case 2:
+            case '2':
                 std::cin.ignore(1000, '\n');
                 VerListaCorreos(generated_user);
             break;
 
-            case 3:
+            case '3':
                 std::cin.ignore(1000, '\n');
                 VerInformacionUsuario(generated_user);
             break;
 
-            case 4:
+            case '4':
                 std::cin.ignore(1000, '\n');
                 system("clear");
                 printf("Cerrando Sesión ...\n");
@@ -272,7 +283,7 @@ void MenuGeneral(User generated_user)
 
 void MenuGeneralAdmin(User generated_user)
 {
-    int selected_option;
+    char selected_option;
     while (1)
     {
         system("clear");
@@ -280,35 +291,39 @@ void MenuGeneralAdmin(User generated_user)
         printf("1. Ver Actividades\n2. Crear Actividad\n3. Ver Correo\n4. Enviar Correo\n5. Ver Mi Usuario\n6. Cerrar Sesion\n");        
 
         std::cin>>selected_option;
+        if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
+        {
+            selected_option = 99; //Va a default        
+        }
 
         switch (selected_option)
         {
-        case 1:
+        case '1':
             std::cin.ignore(1000, '\n');
             MenuVerActividades(2);
         break;
 
-        case 2:
+        case '2':
             std::cin.ignore(1000, '\n');
             
         break;
 
-        case 3:
+        case '3':
             std::cin.ignore(1000, '\n');
             VerListaCorreos(generated_user);
         break;
 
-        case 4:
+        case '4':
             std::cin.ignore(1000, '\n');
             EnviarCorreo();
         break;
 
-        case 5:
+        case '5':
             std::cin.ignore(1000, '\n');
             VerInformacionUsuario(generated_user);
         break;
 
-        case 6:
+        case '6':
             system("clear");
             printf("Cerrando Sesión ...\n");
             sleep(1);

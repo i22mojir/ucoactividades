@@ -5,7 +5,7 @@ int main(int argc, char const *argv[])
 {
     std::vector<std::string> opciones={"1. Iniciar Sesion", "2. Registrarse", "3. Ver Actividades sin iniciar sesion", "4. Salir"};
 
-    int key;
+    char key;
 
     while (1)
     {
@@ -18,24 +18,29 @@ int main(int argc, char const *argv[])
         
         std::cin>>key;
 
+        if (isdigit(key) == 0) //Si no es un numero no hace nada
+        {
+            key = 99; //Va a default        
+        }
+        
         switch (key)
         {
-        case 1:
+        case '1':
             std::cin.ignore(1000, '\n');
             MenuInicioSesion();
         break;
 
-        case 2:
+        case '2':
             std::cin.ignore(1000, '\n');
             MenuRegistro();    
         break;
         
-        case 3:
+        case '3':
             std::cin.ignore(1000, '\n');
             MenuVerActividades(0);
         break;
 
-        case 4:
+        case '4':
             system("clear");
             printf("Saliendo del programa □□□\n");
             sleep(1);
