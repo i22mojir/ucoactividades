@@ -22,5 +22,6 @@ void MenuGeneral(User generated_user); //Se le pasa por parametro el usuario que
 void VerInformacionUsuario(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
 void MenuGeneralAdmin(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
 void VerListaCorreos(User generated_user); //Se le pasa por parametro el usuario que ha iniciado sesion
+void EnviarCorreo();
 
 #endif

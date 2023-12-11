@@ -22,7 +22,7 @@ void MenuInicioSesion()
         std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
 
     //Comprobacion de datos, sino la variable de intentos se decrementa
-    MenuGeneral(generated_user);
+    MenuGeneralAdmin(generated_user);
 }
 
 void MenuRegistro()
@@ -96,7 +96,6 @@ void VerInformacionUsuario(User generated_user)
     printf("/Para cambiar la contraseña pongase en contacto con un administrador/\n");
 
     printf("\n(Pulsa ENTER para volver al atras)\n");
-    std::cin.get();
 }
 
 void VerListaCorreos(User generated_user)
@@ -164,7 +163,54 @@ void VerListaCorreos(User generated_user)
     }
 }
 
+void EnviarCorreo()
+{
+    std::string temp_title, temp_to_person, temp_desc;
 
+    Mail new_mail;
+
+    system("clear");
+
+    printf("Paso 1/3. Indique el usuario o grupo al cual se le enviara el correo:\n");
+    std::cin>>temp_to_person;
+    std::cin.ignore(1000, '\n');
+    new_mail.SetToPerson(temp_to_person);
+
+    system("clear");
+
+    printf("Paso 2/3. Indique el Asunto del correo:\n");
+    std::getline(std::cin, temp_title);
+    new_mail.SetTitle(temp_title);
+
+    system("clear");
+
+    printf("Paso 3/3. Indique la descripcion del correo:\n");
+    std::getline(std::cin, temp_desc);
+    new_mail.SetDesc(temp_desc);
+
+    system("clear");
+
+    std::string file_path = "../data/maildata/" + temp_to_person + temp_title;
+
+    std::ofstream new_mail_file(file_path);
+
+    if (new_mail_file.is_open())
+    {
+        new_mail_file << new_mail.GetTitle() << "\n";
+        new_mail_file << new_mail.GetToPerson() << "\n";
+        new_mail_file << new_mail.GetDesc() << "\n";
+
+        printf("Se envio el correo correctamente\n\n");
+
+        printf("Presione ENTER para volver al menu principal\n");
+
+        new_mail_file.close();
+    }else
+    {
+        printf("Hubo un problema enviando el correo\n\n");
+        printf("Presione ENTER para volver al menu principal\n");
+    }
+}
 
 //MENU GENERAL - RECIBE COMO PARAMETRO EL USUARIO Y SUS DATOS
 void MenuGeneral(User generated_user)
@@ -254,7 +300,7 @@ void MenuGeneralAdmin(User generated_user)
 
         case 4:
             std::cin.ignore(1000, '\n');
-            
+            EnviarCorreo();
         break;
 
         case 5:
