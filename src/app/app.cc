@@ -132,17 +132,18 @@ void VerListaCorreos(User generated_user)
         return;
     }
 
-    std::string file_path = "../../data/maildata/" + mail_vector[(selected_option-1)];
+    std::string file_path = "../data/maildata/" + mail_vector[(selected_option-1)];
     std::cout<<"DEBUG: "<<file_path<<"\n";
-    std::ifstream mail_file(file_path.c_str()); //Abrir archivo modo lectura
+    std::ifstream mail_file(file_path); //Abrir archivo modo lectura
 
     if (mail_file.is_open())
     {
+        system("clear");
         std::string temp_title, temp_to_person, temp_desc;
     
-        std::getline(file, temp_title);
-        std::getline(file, temp_to_person);
-        std::getline(file, temp_desc);
+        std::getline(mail_file, temp_title);
+        std::getline(mail_file, temp_to_person);
+        std::getline(mail_file, temp_desc);
 
         generated_mail.SetTitle(temp_title);
         generated_mail.SetToPerson(temp_to_person);
