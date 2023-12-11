@@ -22,7 +22,7 @@ void MenuInicioSesion()
         std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
 
     //Comprobacion de datos, sino la variable de intentos se decrementa
-    MenuGeneralAdmin(generated_user);
+    MenuGeneral(generated_user);
 }
 
 void MenuRegistro()
