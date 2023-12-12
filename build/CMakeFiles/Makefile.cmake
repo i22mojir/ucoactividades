@@ -56,7 +56,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/CMakeFiles/ucoactividades.dir/DependInfo.cmake"
-  "src/classes/activity/CMakeFiles/activity_lib.dir/DependInfo.cmake"
-  "src/classes/user/CMakeFiles/user_lib.dir/DependInfo.cmake"
-  "src/classes/mail/CMakeFiles/mail_lib.dir/DependInfo.cmake"
+  "src/classes/activity/CMakeFiles/activity.dir/DependInfo.cmake"
+  "src/classes/user/CMakeFiles/user.dir/DependInfo.cmake"
+  "src/classes/mail/CMakeFiles/mail.dir/DependInfo.cmake"
   )

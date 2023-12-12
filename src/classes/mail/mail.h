@@ -1,9 +1,12 @@
 #ifndef EMAIL_H
 #define EMAIL_H
-
+#include <iostream>
 #include <string>
 #include <vector>
-
+#include <filesystem>
+#include <fstream>
+namespace fs = std::filesystem;
+#include "../user/user.h"
 class Mail
 {
 private:
@@ -21,6 +24,9 @@ std::string GetDesc(){return desc_;}
 void SetTitle(std::string title){title_ = title;}
 void SetToPerson(std::string to_person){to_person_ = to_person;}
 void SetDesc(std::string desc){desc_ = desc;}
+
+void ViewMail(User generated_user);
+void SendMail();
 };
 
 #endif

@@ -4,7 +4,7 @@
 void MenuInicioSesion()
 {
     std::string username, password;
-    User generated_user;
+    User generated_user();
 
         system("clear");
         printf("*****************************\n*      INCIO DE SESION      *\n*****************************\n");
@@ -30,6 +30,7 @@ void MenuRegistro()
 
     std::string username, email, password;
     User generated_user;
+    std::vector<User> user_vector;
 
     system("clear");
     printf("*****************************\n*         REGISTRO          *\n*****************************\n");
@@ -51,9 +52,6 @@ void MenuRegistro()
     generated_user.SetPassword(password);
 
     std::cin.ignore(1000, '\n');
-
-    //Comprobacion de base de datos si existe y comprobacion de contraseña segura
-
 }
 
 void MenuVerActividades(int user_is_registered)
@@ -102,135 +100,14 @@ void VerInformacionUsuario(User generated_user)
 
 void VerListaCorreos(User generated_user)
 {
-    Mail generated_mail;
-    int selected_mail;
-    std::vector<std::string> mail_vector;
-    char selected_option;
-
-                                                                        //CAMBIO DE USER
-                                                                        generated_user.SetEmail("i22mojir@uco.es");
-
-
-    std::string path="../../data/maildata"; //Especificacion de directorio
-    system("clear");
-    for (const auto it: fs::directory_iterator(path)) //Lectura de archivos del directorio al vector (nombre archivo) (utiliza <filesystem>)
-    {
-        if (fs::is_regular_file(it))
-        {
-            size_t search = it.path().filename().string().find(generated_user.GetUserName());
-            if (search == std::string::npos) //Si el archivo contiene el correo del usuario
-            {
-                mail_vector.push_back(it.path().filename().string());                       //MIRARLOOOOOOOOOOOOOOOOOOOOOOOOOOO
-            }
-        }
-    }
-
-    printf("*****************************\n*          CORREO           *\n*****************************\n");
-    for (int i = 0; i < mail_vector.size(); i++) //Muestra el vector
-    {
-        printf("%i. %s\n", (i+1), mail_vector[i].c_str());
-    }
-
-                                                                    printf("DEBUG: email:%s\n", generated_user.GetEmail().c_str());
-    
-    printf("\nIndique numero del correo para verlo:");
-    std::cin>>selected_option;
-
-    if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
-    {
-        return;        
-    }else
-    {
-        selected_mail = selected_option - '0'; //Convierte el valor char a int
-    }
-
-    if (selected_mail < 1 || selected_mail > mail_vector.size()) //De esta forma se asegura de que solo se abren ficheros existentes
-    {
-        system("clear");
-        printf("(ERROR) Se ha especificado un correo inexistente\n\nPresione ENTER para volver atras\n");
-        std::cin.get();
-        return;
-    }
-
-    std::string file_path = "../../data/maildata/" + mail_vector[(selected_mail-1)];
-    std::cout<<"DEBUG: "<<file_path<<"\n";
-    std::ifstream mail_file(file_path); //Abrir archivo modo lectura
-
-    if (mail_file.is_open())
-    {
-        system("clear");
-        std::string temp_title, temp_to_person, temp_desc;
-    
-        std::getline(mail_file, temp_title);
-        std::getline(mail_file, temp_to_person);
-        std::getline(mail_file, temp_desc);
-
-        generated_mail.SetTitle(temp_title);
-        generated_mail.SetToPerson(temp_to_person);
-        generated_mail.SetDesc(temp_desc);
-
-        printf("Titulo: %s\nPara: %s\nDescripcion: %s\n\n", generated_mail.GetTitle().c_str(), generated_mail.GetToPerson().c_str(), generated_mail.GetDesc().c_str());
-
-        printf("Presiona ENTER para volver al menu\n");
-        std::cin.get();
-
-        mail_file.close();
-    }else
-    {
-        system("clear");
-        printf("Ha ocurrido un error al abrir el correo\nPresione ENTER para volver atras\n");
-        std::cin.get();
-        return;
-    }
+    Mail new_mail;
+    new_mail.ViewMail(generated_user);
 }
 
 void EnviarCorreo()
 {
-    std::string temp_title, temp_to_person, temp_desc;
-
     Mail new_mail;
-
-    system("clear");
-
-    printf("Paso 1/3. Indique el usuario o grupo al cual se le enviara el correo:\n");
-    std::cin>>temp_to_person;
-    std::cin.ignore(1000, '\n');
-    new_mail.SetToPerson(temp_to_person);
-
-    system("clear");
-
-    printf("Paso 2/3. Indique el Asunto del correo:\n");
-    std::getline(std::cin, temp_title);
-    new_mail.SetTitle(temp_title);
-
-    system("clear");
-
-    printf("Paso 3/3. Indique la descripcion del correo:\n");
-    std::getline(std::cin, temp_desc);
-    new_mail.SetDesc(temp_desc);
-
-    system("clear");
-
-    std::string file_path = "../data/maildata/" + temp_to_person + temp_title;
-
-    std::ofstream new_mail_file(file_path);
-
-    if (new_mail_file.is_open())
-    {
-        new_mail_file << new_mail.GetTitle() << "\n";
-        new_mail_file << new_mail.GetToPerson() << "\n";
-        new_mail_file << new_mail.GetDesc() << "\n";
-
-        printf("Se envio el correo correctamente\n\n");
-
-        printf("Presione ENTER para volver al menu principal\n");
-
-        new_mail_file.close();
-    }else
-    {
-        printf("Hubo un problema enviando el correo\n\n");
-        printf("Presione ENTER para volver al menu principal\n");
-    }
+    new_mail.SendMail();
 }
 
 //MENU GENERAL - RECIBE COMO PARAMETRO EL USUARIO Y SUS DATOS

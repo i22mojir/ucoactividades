@@ -117,25 +117,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/classes/mail/CMakeFiles/mail_lib.dir/rule:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/CMakeFiles/mail_lib.dir/rule
-.PHONY : src/classes/mail/CMakeFiles/mail_lib.dir/rule
+src/classes/mail/CMakeFiles/mail.dir/rule:
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/CMakeFiles/mail.dir/rule
+.PHONY : src/classes/mail/CMakeFiles/mail.dir/rule
 
 # Convenience name for target.
-mail_lib: src/classes/mail/CMakeFiles/mail_lib.dir/rule
-.PHONY : mail_lib
+mail: src/classes/mail/CMakeFiles/mail.dir/rule
+.PHONY : mail
 
 # fast build rule for target.
-mail_lib/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/build
-.PHONY : mail_lib/fast
+mail/fast:
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/build
+.PHONY : mail/fast
 
 mail.o: mail.cc.o
 .PHONY : mail.o
 
 # target to build an object file
 mail.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/mail.cc.o
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.o
 .PHONY : mail.cc.o
 
 mail.i: mail.cc.i
@@ -143,7 +143,7 @@ mail.i: mail.cc.i
 
 # target to preprocess a source file
 mail.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/mail.cc.i
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.i
 .PHONY : mail.cc.i
 
 mail.s: mail.cc.s
@@ -151,7 +151,7 @@ mail.s: mail.cc.s
 
 # target to generate assembly for a file
 mail.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/mail.cc.s
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.s
 .PHONY : mail.cc.s
 
 # Help Target
@@ -162,7 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... mail_lib"
+	@echo "... mail"
 	@echo "... mail.o"
 	@echo "... mail.i"
 	@echo "... mail.s"

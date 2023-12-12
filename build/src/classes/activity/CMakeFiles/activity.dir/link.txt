@@ -1,0 +1,2 @@
+/usr/bin/ar qc libactivity.a CMakeFiles/activity.dir/activity.cc.o
+/usr/bin/ranlib libactivity.a

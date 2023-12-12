@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/ucoactividades.dir/app/app-main.cc.o CMakeFiles/ucoactividades.dir/app/app.cc.o -o ucoactividades 
+/usr/bin/c++ CMakeFiles/ucoactividades.dir/app/app-main.cc.o CMakeFiles/ucoactividades.dir/app/app.cc.o -o ucoactividades  classes/mail/libmail.a classes/user/libuser.a classes/activity/libactivity.a classes/mail/libmail.a classes/user/libuser.a classes/activity/libactivity.a 

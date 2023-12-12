@@ -117,25 +117,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/classes/user/CMakeFiles/user_lib.dir/rule:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/user/CMakeFiles/user_lib.dir/rule
-.PHONY : src/classes/user/CMakeFiles/user_lib.dir/rule
+src/classes/user/CMakeFiles/user.dir/rule:
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/user/CMakeFiles/user.dir/rule
+.PHONY : src/classes/user/CMakeFiles/user.dir/rule
 
 # Convenience name for target.
-user_lib: src/classes/user/CMakeFiles/user_lib.dir/rule
-.PHONY : user_lib
+user: src/classes/user/CMakeFiles/user.dir/rule
+.PHONY : user
 
 # fast build rule for target.
-user_lib/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/build
-.PHONY : user_lib/fast
+user/fast:
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/build
+.PHONY : user/fast
 
 user.o: user.cc.o
 .PHONY : user.o
 
 # target to build an object file
 user.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/user.cc.o
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/user.cc.o
 .PHONY : user.cc.o
 
 user.i: user.cc.i
@@ -143,7 +143,7 @@ user.i: user.cc.i
 
 # target to preprocess a source file
 user.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/user.cc.i
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/user.cc.i
 .PHONY : user.cc.i
 
 user.s: user.cc.s
@@ -151,7 +151,7 @@ user.s: user.cc.s
 
 # target to generate assembly for a file
 user.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/user.cc.s
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/user.cc.s
 .PHONY : user.cc.s
 
 # Help Target
@@ -162,7 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... user_lib"
+	@echo "... user"
 	@echo "... user.o"
 	@echo "... user.i"
 	@echo "... user.s"

@@ -218,6 +218,12 @@ UCOActividades_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 UCOActividades_SOURCE_DIR:STATIC=/mnt/c/Users/rafae/uni/ucoactividades
 
+//Dependencies for the target
+activity_LIB_DEPENDS:STATIC=general;user;general;mail;
+
+//Dependencies for the target
+mail_LIB_DEPENDS:STATIC=general;user;general;activity;
+
 //Value Computed by CMake
 ucoactividades_BINARY_DIR:STATIC=/mnt/c/Users/rafae/uni/ucoactividades/build
 
@@ -226,6 +232,9 @@ ucoactividades_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 ucoactividades_SOURCE_DIR:STATIC=/mnt/c/Users/rafae/uni/ucoactividades
+
+//Dependencies for the target
+user_LIB_DEPENDS:STATIC=general;mail;general;activity;
 
 
 ########################

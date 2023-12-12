@@ -108,6 +108,12 @@ ucoactividades_EXTERNAL_OBJECTS =
 src/ucoactividades: src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o
 src/ucoactividades: src/CMakeFiles/ucoactividades.dir/app/app.cc.o
 src/ucoactividades: src/CMakeFiles/ucoactividades.dir/build.make
+src/ucoactividades: src/classes/mail/libmail.a
+src/ucoactividades: src/classes/user/libuser.a
+src/ucoactividades: src/classes/activity/libactivity.a
+src/ucoactividades: src/classes/mail/libmail.a
+src/ucoactividades: src/classes/user/libuser.a
+src/ucoactividades: src/classes/activity/libactivity.a
 src/ucoactividades: src/CMakeFiles/ucoactividades.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ucoactividades"
 	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ucoactividades.dir/link.txt --verbose=$(VERBOSE)

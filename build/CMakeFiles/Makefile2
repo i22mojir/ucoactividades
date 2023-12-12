@@ -134,7 +134,7 @@ src/classes/clean: src/classes/mail/clean
 # Directory level rules for directory src/classes/activity
 
 # Recursive "all" directory target.
-src/classes/activity/all: src/classes/activity/CMakeFiles/activity_lib.dir/all
+src/classes/activity/all: src/classes/activity/CMakeFiles/activity.dir/all
 .PHONY : src/classes/activity/all
 
 # Recursive "preinstall" directory target.
@@ -142,14 +142,14 @@ src/classes/activity/preinstall:
 .PHONY : src/classes/activity/preinstall
 
 # Recursive "clean" directory target.
-src/classes/activity/clean: src/classes/activity/CMakeFiles/activity_lib.dir/clean
+src/classes/activity/clean: src/classes/activity/CMakeFiles/activity.dir/clean
 .PHONY : src/classes/activity/clean
 
 #=============================================================================
 # Directory level rules for directory src/classes/mail
 
 # Recursive "all" directory target.
-src/classes/mail/all: src/classes/mail/CMakeFiles/mail_lib.dir/all
+src/classes/mail/all: src/classes/mail/CMakeFiles/mail.dir/all
 .PHONY : src/classes/mail/all
 
 # Recursive "preinstall" directory target.
@@ -157,14 +157,14 @@ src/classes/mail/preinstall:
 .PHONY : src/classes/mail/preinstall
 
 # Recursive "clean" directory target.
-src/classes/mail/clean: src/classes/mail/CMakeFiles/mail_lib.dir/clean
+src/classes/mail/clean: src/classes/mail/CMakeFiles/mail.dir/clean
 .PHONY : src/classes/mail/clean
 
 #=============================================================================
 # Directory level rules for directory src/classes/user
 
 # Recursive "all" directory target.
-src/classes/user/all: src/classes/user/CMakeFiles/user_lib.dir/all
+src/classes/user/all: src/classes/user/CMakeFiles/user.dir/all
 .PHONY : src/classes/user/all
 
 # Recursive "preinstall" directory target.
@@ -172,14 +172,14 @@ src/classes/user/preinstall:
 .PHONY : src/classes/user/preinstall
 
 # Recursive "clean" directory target.
-src/classes/user/clean: src/classes/user/CMakeFiles/user_lib.dir/clean
+src/classes/user/clean: src/classes/user/CMakeFiles/user.dir/clean
 .PHONY : src/classes/user/clean
 
 #=============================================================================
 # Target rules for target src/CMakeFiles/ucoactividades.dir
 
 # All Build rule for target.
-src/CMakeFiles/ucoactividades.dir/all:
+src/CMakeFiles/ucoactividades.dir/all: src/classes/activity/CMakeFiles/activity.dir/all
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/depend
 	$(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=5,6,7 "Built target ucoactividades"
@@ -187,7 +187,7 @@ src/CMakeFiles/ucoactividades.dir/all:
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/ucoactividades.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ucoactividades.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/ucoactividades.dir/rule
@@ -202,82 +202,82 @@ src/CMakeFiles/ucoactividades.dir/clean:
 .PHONY : src/CMakeFiles/ucoactividades.dir/clean
 
 #=============================================================================
-# Target rules for target src/classes/activity/CMakeFiles/activity_lib.dir
+# Target rules for target src/classes/activity/CMakeFiles/activity.dir
 
 # All Build rule for target.
-src/classes/activity/CMakeFiles/activity_lib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=1,2 "Built target activity_lib"
-.PHONY : src/classes/activity/CMakeFiles/activity_lib.dir/all
+src/classes/activity/CMakeFiles/activity.dir/all: src/classes/user/CMakeFiles/user.dir/all
+	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=1,2 "Built target activity"
+.PHONY : src/classes/activity/CMakeFiles/activity.dir/all
 
 # Build rule for subdir invocation for target.
-src/classes/activity/CMakeFiles/activity_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/CMakeFiles/activity_lib.dir/all
+src/classes/activity/CMakeFiles/activity.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/CMakeFiles/activity.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
-.PHONY : src/classes/activity/CMakeFiles/activity_lib.dir/rule
+.PHONY : src/classes/activity/CMakeFiles/activity.dir/rule
 
 # Convenience name for target.
-activity_lib: src/classes/activity/CMakeFiles/activity_lib.dir/rule
-.PHONY : activity_lib
+activity: src/classes/activity/CMakeFiles/activity.dir/rule
+.PHONY : activity
 
 # clean rule for target.
-src/classes/activity/CMakeFiles/activity_lib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/clean
-.PHONY : src/classes/activity/CMakeFiles/activity_lib.dir/clean
+src/classes/activity/CMakeFiles/activity.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/clean
+.PHONY : src/classes/activity/CMakeFiles/activity.dir/clean
 
 #=============================================================================
-# Target rules for target src/classes/user/CMakeFiles/user_lib.dir
+# Target rules for target src/classes/user/CMakeFiles/user.dir
 
 # All Build rule for target.
-src/classes/user/CMakeFiles/user_lib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=8,9 "Built target user_lib"
-.PHONY : src/classes/user/CMakeFiles/user_lib.dir/all
+src/classes/user/CMakeFiles/user.dir/all: src/classes/mail/CMakeFiles/mail.dir/all
+	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=8,9 "Built target user"
+.PHONY : src/classes/user/CMakeFiles/user.dir/all
 
 # Build rule for subdir invocation for target.
-src/classes/user/CMakeFiles/user_lib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/user/CMakeFiles/user_lib.dir/all
+src/classes/user/CMakeFiles/user.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/user/CMakeFiles/user.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
-.PHONY : src/classes/user/CMakeFiles/user_lib.dir/rule
+.PHONY : src/classes/user/CMakeFiles/user.dir/rule
 
 # Convenience name for target.
-user_lib: src/classes/user/CMakeFiles/user_lib.dir/rule
-.PHONY : user_lib
+user: src/classes/user/CMakeFiles/user.dir/rule
+.PHONY : user
 
 # clean rule for target.
-src/classes/user/CMakeFiles/user_lib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/clean
-.PHONY : src/classes/user/CMakeFiles/user_lib.dir/clean
+src/classes/user/CMakeFiles/user.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/clean
+.PHONY : src/classes/user/CMakeFiles/user.dir/clean
 
 #=============================================================================
-# Target rules for target src/classes/mail/CMakeFiles/mail_lib.dir
+# Target rules for target src/classes/mail/CMakeFiles/mail.dir
 
 # All Build rule for target.
-src/classes/mail/CMakeFiles/mail_lib.dir/all:
-	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/depend
-	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=3,4 "Built target mail_lib"
-.PHONY : src/classes/mail/CMakeFiles/mail_lib.dir/all
+src/classes/mail/CMakeFiles/mail.dir/all:
+	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/depend
+	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=3,4 "Built target mail"
+.PHONY : src/classes/mail/CMakeFiles/mail.dir/all
 
 # Build rule for subdir invocation for target.
-src/classes/mail/CMakeFiles/mail_lib.dir/rule: cmake_check_build_system
+src/classes/mail/CMakeFiles/mail.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/CMakeFiles/mail_lib.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/CMakeFiles/mail.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
-.PHONY : src/classes/mail/CMakeFiles/mail_lib.dir/rule
+.PHONY : src/classes/mail/CMakeFiles/mail.dir/rule
 
 # Convenience name for target.
-mail_lib: src/classes/mail/CMakeFiles/mail_lib.dir/rule
-.PHONY : mail_lib
+mail: src/classes/mail/CMakeFiles/mail.dir/rule
+.PHONY : mail
 
 # clean rule for target.
-src/classes/mail/CMakeFiles/mail_lib.dir/clean:
-	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/clean
-.PHONY : src/classes/mail/CMakeFiles/mail_lib.dir/clean
+src/classes/mail/CMakeFiles/mail.dir/clean:
+	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/clean
+.PHONY : src/classes/mail/CMakeFiles/mail.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -3,68 +3,54 @@
 #include <fstream>
 #include <vector>
 
-int main()
+bool ComprobarNombre(std::vector<User> &usuarios, std::string &user_name)
 {
-    std::vector<User> usuarios;
-    usuarios = GetUsers();
-
-    for (int i = 0; i != 3;)
+    for (auto it = usuarios.begin(); it != usuarios.end(); ++it)
     {
-        std::cout << "¿Qué desea hacer?\n";
-        std::cout << "1) Iniciar sesión\n";
-        std::cout << "2) Registrarse\n";
-        std::cout << "3) Salir\n";
-        std::cin >> i;
+        if (it->GetUserName() == user_name)
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
-        if (i == 1)
+bool ComprobarEmail(std::vector<User> &usuarios, std::string &email)
+{
+    for (auto it = usuarios.begin(); it != usuarios.end(); ++it)
+    {
+        if (it->GetEmail() == email)
         {
-            User aux;
-            for (int j = 0; j < 3; j++)
-            {
-                if (IniciarSesion(usuarios, aux))
-                {
-                    std::cout << "Usuario y contraseña correctos\n";
-                    usuarios.push_back(aux);
-                    j=4;
-                    i=3;
-                }
-                std::cout << "Error al iniciar sesión\n";
-            }
-            if (i != 3)
-            {
-                std::cout << "Ha realizado demasiados intentos incorrectos, fin del programa" << std::endl;
-                return 0;
-            }
+            return false;
         }
-        else if (i == 2)
-        {
-            User nuevoUsuario = RegistrarUsuario(usuarios);
-            usuarios.push_back(nuevoUsuario);
+    }
+    return true;
+}
 
-            std::ofstream archivo("usuarios.txt", std::ios::app);
-            if (archivo.is_open())
-            {
-                archivo << nuevoUsuario.GetDetails();
-                archivo.close();
-                std::cout << "Hemos registrado su usuario correctamente y los cambios se han guardado en 'usuarios.txt'." << std::endl;
-            }
-            else
-            {
-                std::cout << "Error, no se pudo abrir el contenido del archivo" << std::endl;
-            }
-        }
-        else if (i == 3)
+bool CumpleRequisitosContrasena(std::string &password)
+{
+    if (password.length() < 8)
+    {
+        std::cout << "Error, la contraseña debe tener al menos 8 caracteres.\n";
+        return false;
+    }
+
+    bool tieneAlMenosUnNumero = false;
+    for (auto it = password.begin(); it != password.end(); ++it)
+    {
+        if (std::isdigit(*it))
         {
-            std::cout << "Programa finalizado" << std::endl;
-            return 0;
-        }
-        else
-        {
-            std::cout << "Error, introduzca una opción del menú" << std::endl;
+            tieneAlMenosUnNumero = true;
         }
     }
 
-    return 0;
+    if (tieneAlMenosUnNumero==false)
+    {
+        std::cout << "Error, la contraseña debe contener al menos un número.\n";
+        return false;
+    }
+
+    return true;
 }
 
 std::string User::GetDetails() const
@@ -75,7 +61,7 @@ std::string User::GetDetails() const
 
 std::vector<User> GetUsers()
 {
-    std::ifstream fich("usuarios.txt");
+    std::ifstream fich("../../data/userdata/users.txt");
     std::vector<User> aux;
 
     if (fich.is_open())
@@ -96,7 +82,7 @@ std::vector<User> GetUsers()
     }
     else
     {
-        std::cout << "Error, no se pudo abrir el contenido del archivo" << std::endl;
+        std::cout << "Error, no se pudo abrir el contenido del archivo\n" << std::endl;
     }
 
     return aux;
@@ -167,54 +153,4 @@ User RegistrarUsuario(std::vector<User> &usuarios)
 
     User New(user_name, email, password, intereses, admin_status);
     return New;
-}
-
-bool ComprobarNombre(std::vector<User> &usuarios, std::string &user_name)
-{
-    for (auto it = usuarios.begin(); it != usuarios.end(); ++it)
-    {
-        if (it->GetUserName() == user_name)
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool ComprobarEmail(std::vector<User> &usuarios, std::string &email)
-{
-    for (auto it = usuarios.begin(); it != usuarios.end(); ++it)
-    {
-        if (it->GetEmail() == email)
-        {
-            return false;
-        }
-    }
-    return true;
-}
-
-bool CumpleRequisitosContrasena(std::string &password)
-{
-    if (password.length() < 8)
-    {
-        std::cout << "Error, la contraseña debe tener al menos 8 caracteres.\n";
-        return false;
-    }
-
-    bool tieneAlMenosUnNumero = false;
-    for (auto it = password.begin(); it != password.end(); ++it)
-    {
-        if (std::isdigit(*it))
-        {
-            tieneAlMenosUnNumero = true;
-        }
-    }
-
-    if (tieneAlMenosUnNumero==false)
-    {
-        std::cout << "Error, la contraseña debe contener al menos un número.\n";
-        return false;
-    }
-
-    return true;
 }

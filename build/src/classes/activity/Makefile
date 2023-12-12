@@ -117,25 +117,25 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/classes/activity/CMakeFiles/activity_lib.dir/rule:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/CMakeFiles/activity_lib.dir/rule
-.PHONY : src/classes/activity/CMakeFiles/activity_lib.dir/rule
+src/classes/activity/CMakeFiles/activity.dir/rule:
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/CMakeFiles/activity.dir/rule
+.PHONY : src/classes/activity/CMakeFiles/activity.dir/rule
 
 # Convenience name for target.
-activity_lib: src/classes/activity/CMakeFiles/activity_lib.dir/rule
-.PHONY : activity_lib
+activity: src/classes/activity/CMakeFiles/activity.dir/rule
+.PHONY : activity
 
 # fast build rule for target.
-activity_lib/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/build
-.PHONY : activity_lib/fast
+activity/fast:
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/build
+.PHONY : activity/fast
 
 activity.o: activity.cc.o
 .PHONY : activity.o
 
 # target to build an object file
 activity.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/activity.cc.o
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.o
 .PHONY : activity.cc.o
 
 activity.i: activity.cc.i
@@ -143,7 +143,7 @@ activity.i: activity.cc.i
 
 # target to preprocess a source file
 activity.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/activity.cc.i
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.i
 .PHONY : activity.cc.i
 
 activity.s: activity.cc.s
@@ -151,7 +151,7 @@ activity.s: activity.cc.s
 
 # target to generate assembly for a file
 activity.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/activity.cc.s
+	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.s
 .PHONY : activity.cc.s
 
 # Help Target
@@ -162,7 +162,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... activity_lib"
+	@echo "... activity"
 	@echo "... activity.o"
 	@echo "... activity.i"
 	@echo "... activity.s"
