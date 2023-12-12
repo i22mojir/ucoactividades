@@ -6,6 +6,7 @@
 #include <string>
 #include <unistd.h>
 #include <fstream>
+#include <stdlib.h>
 #include <filesystem> //Leer archivos del directorio
 namespace fs = std::filesystem;
 #include "../classes/user/user.h"

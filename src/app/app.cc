@@ -103,16 +103,25 @@ void VerInformacionUsuario(User generated_user)
 void VerListaCorreos(User generated_user)
 {
     Mail generated_mail;
+    int selected_mail;
     std::vector<std::string> mail_vector;
     char selected_option;
 
-    std::string path="../data/maildata"; //Especificacion de directorio
+                                                                        //CAMBIO DE USER
+                                                                        generated_user.SetEmail("i22mojir@uco.es");
+
+
+    std::string path="../../data/maildata"; //Especificacion de directorio
     system("clear");
     for (const auto it: fs::directory_iterator(path)) //Lectura de archivos del directorio al vector (nombre archivo) (utiliza <filesystem>)
     {
         if (fs::is_regular_file(it))
         {
-            mail_vector.push_back(it.path().filename().string());
+            size_t search = it.path().filename().string().find(generated_user.GetUserName());
+            if (search == std::string::npos) //Si el archivo contiene el correo del usuario
+            {
+                mail_vector.push_back(it.path().filename().string());                       //MIRARLOOOOOOOOOOOOOOOOOOOOOOOOOOO
+            }
         }
     }
 
@@ -121,6 +130,8 @@ void VerListaCorreos(User generated_user)
     {
         printf("%i. %s\n", (i+1), mail_vector[i].c_str());
     }
+
+                                                                    printf("DEBUG: email:%s\n", generated_user.GetEmail().c_str());
     
     printf("\nIndique numero del correo para verlo:");
     std::cin>>selected_option;
@@ -128,9 +139,12 @@ void VerListaCorreos(User generated_user)
     if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
     {
         return;        
+    }else
+    {
+        selected_mail = selected_option - '0'; //Convierte el valor char a int
     }
 
-    if (selected_option < 1 || selected_option > mail_vector.size()) //De esta forma se asegura de que solo se abren ficheros existentes
+    if (selected_mail < 1 || selected_mail > mail_vector.size()) //De esta forma se asegura de que solo se abren ficheros existentes
     {
         system("clear");
         printf("(ERROR) Se ha especificado un correo inexistente\n\nPresione ENTER para volver atras\n");
@@ -138,7 +152,7 @@ void VerListaCorreos(User generated_user)
         return;
     }
 
-    std::string file_path = "../data/maildata/" + mail_vector[(selected_option-1)];
+    std::string file_path = "../../data/maildata/" + mail_vector[(selected_mail-1)];
     std::cout<<"DEBUG: "<<file_path<<"\n";
     std::ifstream mail_file(file_path); //Abrir archivo modo lectura
 
