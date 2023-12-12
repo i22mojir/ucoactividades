@@ -1,47 +1,66 @@
-#include <iostream>
-#include <ncurses.h>
+#include "app.h"
+#include <unistd.h>
 
 int main(int argc, char const *argv[])
 {
-    //Inicio de preparacion para gestion de teclas
-    initscr();
-    cbreak();
-    noecho();
-    keypad(stdscr, TRUE);
-    //Fin de preparacion
+    std::vector<std::string> opciones={"1. Iniciar Sesion", "2. Registrarse", "3. Ver Actividades sin iniciar sesion", "4. Salir"};
 
-    int key, status = 1;
+    char key;
 
-    while (status == 1)
+    while (1)
     {
-        printf("COSAS\n");
+        system("clear");
+        printf("*****************************\n*       UCOACTIVIDADES      *\n*****************************\n");
+        for (int i = 0; i < opciones.size(); i++)
+        {
+            printf("%s\n", opciones[i].c_str());
+        }
+        
+        std::cin>>key;
 
-        key = getch();
+        if (isdigit(key) == 0) //Si no es un numero no hace nada
+        {
+            key = 99; //Va a default        
+        }
+        
         switch (key)
         {
-        case KEY_UP:
-            printf("keyup\n");
-            break;
+        case '1':
+            std::cin.ignore(1000, '\n');
+            MenuInicioSesion();
+        break;
 
-        case KEY_DOWN:
-            printf("keydown\n");
-            break;
+        case '2':
+            std::cin.ignore(1000, '\n');
+            MenuRegistro();    
+        break;
         
-        case 10:
-            printf("enter\n");
-            break;
+        case '3':
+            std::cin.ignore(1000, '\n');
+            MenuVerActividades(0);
+        break;
 
-        case 27:
-            printf("esc\n");
-            status=0;
-            break;
+        case '4':
+            system("clear");
+            printf("Saliendo del programa □□□\n");
+            sleep(1);
+            system("clear");
+            printf("Saliendo del programa ■□□\n");
+            sleep(1);
+            system("clear");
+            printf("Saliendo del programa ■■□\n");
+            sleep(1);
+            system("clear");
+            printf("Saliendo del programa ■■■\n");
+            system("clear");
+            return 0;
+        break;
 
         default:
-            break;
+            //void
+        break;
         }
     }
 
-    endwin(); //Cierra la libreria antes de salir del programa
-
-    return 0;
+    std::cin.ignore(1000, '\n');
 }

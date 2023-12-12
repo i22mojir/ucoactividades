@@ -1,1 +1,1 @@
-/usr/bin/c++ CMakeFiles/ucoactividades.dir/app/app-main.cc.o CMakeFiles/ucoactividades.dir/app/app.cc.o -o ucoactividades  -lncurses 
+/usr/bin/c++ CMakeFiles/ucoactividades.dir/app/app-main.cc.o CMakeFiles/ucoactividades.dir/app/app.cc.o -o ucoactividades 
