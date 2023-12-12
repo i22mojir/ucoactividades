@@ -67,7 +67,6 @@ int main()
     return 0;
 }
 
-
 std::string User::GetDetails() const
 {
     return "Nombre de usuario: " + user_name_ + "\nCorreo: " + email_ + "\nContraseña: " + password_ + "\nIntereses: " + std::to_string(static_cast<int>(intereses_)) +
@@ -193,7 +192,6 @@ bool ComprobarEmail(std::vector<User> &usuarios, std::string &email)
     }
     return true;
 }
-
 
 bool CumpleRequisitosContrasena(std::string &password)
 {
