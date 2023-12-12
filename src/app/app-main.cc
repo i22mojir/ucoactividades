@@ -4,7 +4,7 @@
 int main(int argc, char const *argv[])
 {
     std::vector<std::string> opciones={"1. Iniciar Sesion", "2. Registrarse", "3. Ver Actividades sin iniciar sesion", "4. Salir"};
-
+    User empty_user;
     char key;
 
     while (1)
@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
         
         case '3':
             std::cin.ignore(1000, '\n');
-            MenuVerActividades(0);
+            MenuVerActividades(0, empty_user); //Entra como usuario sin registrar (no puede preinscribirse)
         break;
 
         case '4':

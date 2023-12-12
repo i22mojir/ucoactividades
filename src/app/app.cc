@@ -4,25 +4,24 @@
 void MenuInicioSesion()
 {
     std::string username, password;
-    User generated_user();
+    User generated_user;
 
-        system("clear");
-        printf("*****************************\n*      INCIO DE SESION      *\n*****************************\n");
+    system("clear");
+    printf("*****************************\n*      INCIO DE SESION      *\n*****************************\n");
+    printf("Usuario:");
+    std::cin>>username;
+    generated_user.SetUserName(username);
+    std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
 
-        printf("Usuario:");
-        std::cin>>username;
-        generated_user.SetUserName(username);
+    printf("Contraseña:");
+    std::cin>>password;
+    generated_user.SetPassword(password);
 
-        std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
-
-        printf("Contraseña:");
-        std::cin>>password;
-        generated_user.SetPassword(password);
-
-        std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
+    std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
 
     //Comprobacion de datos, sino la variable de intentos se decrementa
     MenuGeneral(generated_user);
+    MenuGeneralAdmin(generated_user);
 }
 
 void MenuRegistro()
@@ -54,11 +53,11 @@ void MenuRegistro()
     std::cin.ignore(1000, '\n');
 }
 
-void MenuVerActividades(int user_is_registered)
+void MenuVerActividades(int user_is_registered, User generated_user)
 {
     system("clear");
     printf("*****************************\n*   LISTA DE ACTIVIDADES    *\n*****************************\n");
-    char selected_activity;
+    int selected_activity;
     std::vector<FILE> vector; //Vector de archivos
 
     for (int i = 0; i < vector.size(); i++)
@@ -67,23 +66,19 @@ void MenuVerActividades(int user_is_registered)
     }
     printf("\nSeleccione actividad:");
     std::cin>>selected_activity;
-
-    if (isdigit(selected_activity) == 0) //Si no es un numero no hace nada
-    {
-        return;        
-    }
+    std::cin.ignore(1000, '\n');
 
     //Si el nombre seleccionado coincide con una actividad se introduce en el menu
 
     if (user_is_registered == 0)
     {
-        //Ver detalle sin inscripcion
+        DetallesActividadSinRegistro(); //Menu sin posibilidad de preinscripcion
     }else if(user_is_registered == 1)
     {
-        //Ver detalle con inscripcion
+        DetallesActividadConRegistro(generated_user);
     }else if(user_is_registered == 2)
     {
-        //Ver detalle como administrador
+        DetallesActividadAdministracion(generated_user);
     }
 }
 
@@ -108,6 +103,129 @@ void EnviarCorreo()
 {
     Mail new_mail;
     new_mail.SendMail();
+}
+
+void DetallesActividadSinRegistro()
+{
+    char selected_option;
+    while (true)
+    {
+        system("clear");
+        printf("*****************************\n*      VISTA DETALLADA      *\n*****************************\n");
+        printf("Actividad seleccionada: <nombre> como: Anonimo\n\n");
+
+        printf("Acciones de actividad:\n1. Ver Informacion\n2. Volver a Incio de Sesion\n\n(Para habilitar la preinscripcion debe estar registrado)\n");
+        std::cin>>selected_option;
+
+        if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
+        {
+            selected_option = 99; //Va a default        
+        }
+
+        switch (selected_option)
+        {
+        case '1':
+            std::cin.ignore(1000, '\n');
+            //Ver informacion de actividad
+            break;
+
+        case '2':
+            std::cin.ignore(1000, '\n');
+            return;
+        break;
+        
+        default:
+            //void
+            break;
+        }
+    }
+}
+
+void DetallesActividadConRegistro(User generated_user)
+{
+    char selected_option;
+    while (true)
+    {
+        system("clear");
+        printf("*****************************\n*      VISTA DETALLADA      *\n*****************************\n");
+        printf("Actividad seleccionada: <nombre> como: %s\n\n", generated_user.GetUserName().c_str());
+
+        printf("Acciones de actividad:\n1. Ver Informacion\n2. PreInscribirse en esta Actividad\n3. Volver al Menu\n");
+        std::cin>>selected_option;
+
+        if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
+        {
+            selected_option = 99; //Va a default        
+        }
+
+        switch (selected_option)
+        {
+        case '1':
+            std::cin.ignore(1000, '\n');
+            //Ver informacion de actividad
+            break;
+
+        case '2':
+            //Funcion de preinscripcion tiene informacion del usuario
+        break;
+
+        case '3':
+            return;
+        break;
+        
+        default:
+            //void
+            break;
+        }
+    }
+}
+
+void DetallesActividadAdministracion(User generated_user)
+{
+    char selected_option;
+    while (true)
+    {
+        system("clear");
+        printf("*****************************\n*      VISTA DETALLADA      *\n*****************************\n");
+        printf("Actividad seleccionada: <nombre> como: %s (admin)\n\n", generated_user.GetUserName().c_str());
+
+        printf("Acciones de actividad:\n1. Ver Informacion\n2. Modificar Actividad\n3. Obtener Lista de Inscritos\n4. Volver al Menu\n");
+        std::cin>>selected_option;
+
+        if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
+        {
+            selected_option = 99; //Va a default        
+        }
+
+        switch (selected_option)
+        {
+        case '1':
+            std::cin.ignore(1000, '\n');
+            //Ver informacion de actividad
+            break;
+
+        case '2':
+            //Funcion de modificacion de actividad
+        break;
+
+        case '3':
+            //Funcion de obtener lista de inscritos
+        break;
+
+        case '4':
+            return;
+        break;
+        
+        default:
+            //void
+            break;
+        }
+    }
+}
+
+void CrearActividad()
+{
+    //Llamada a funcion de creacion de actividad
 }
 
 //MENU GENERAL - RECIBE COMO PARAMETRO EL USUARIO Y SUS DATOS
@@ -140,7 +258,7 @@ void MenuGeneral(User generated_user)
             {
             case '1':
                 std::cin.ignore(1000, '\n');
-                MenuVerActividades(1);
+                MenuVerActividades(1, generated_user); //Entra como usuario comun
             break;
 
             case '2':
@@ -191,12 +309,12 @@ void MenuGeneralAdmin(User generated_user)
         {
         case '1':
             std::cin.ignore(1000, '\n');
-            MenuVerActividades(2);
+            MenuVerActividades(2, generated_user); //Entra como administrador
         break;
 
         case '2':
             std::cin.ignore(1000, '\n');
-            
+            CrearActividad();
         break;
 
         case '3':

@@ -30,6 +30,13 @@ void Mail::ViewMail(User generated_user)
     {
         printf("%i. %s\n", (i+1), mail_vector[i].c_str());
     }
+
+    if (mail_vector.size() < 1)
+    {
+        printf("No hay nuevos correos\n");
+        printf("\nPresiona ENTER para volver\n");
+        return;
+    }
     
     printf("\nIndique numero del correo para verlo:");
     std::cin>>selected_option;
@@ -101,7 +108,7 @@ void Mail::SendMail()
 
     system("clear");
 
-    std::string file_path = "../data/maildata/" + temp_to_person + temp_title;
+    std::string file_path = "../../data/maildata/" + temp_title + "-" + temp_to_person; //El nombre del archivo es a quien va dirigido + titulo
 
     std::ofstream new_mail_file(file_path);
 
