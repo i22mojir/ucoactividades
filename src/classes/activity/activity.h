@@ -28,10 +28,10 @@
 
         void VerInformacionActividad(std::string nombre_fichero_actividad);
         bool CrearActividad();
-        bool PreInscribirse(User usuario, std::string nombre_fichero_actividad);
+        bool PreInscribirse(user usuario, std::string nombre_fichero_actividad);
         void MostrarListaInscritos(std::string nombre_fichero_actividad);
         bool ModificarActividad(std::string nombre_fichero_actividad);
-        bool EliminarPreInscripcion(User usuario, std::string nombre_fichero_actividad);
+        bool EliminarPreInscripcion(user usuario, std::string nombre_fichero_actividad);
 
         std::string GetTitle(){return title_;}
         std::string GetDescription(){return description_;}

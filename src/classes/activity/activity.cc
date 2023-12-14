@@ -90,7 +90,7 @@ bool Actividad::CrearActividad(){
     }
     
 }
-bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_actividad){
+bool Actividad::PreInscribirse(user usuario, std::string nombre_fichero_actividad){
     std::string nombreActividad;
     std::ifstream file ("../data/activitydata/Actividades");
     if (file.is_open()){
@@ -142,7 +142,7 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
     } 
 }
 void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
-  std::string nombreActividad;
+  std::string nombreActividad, precio;
     std::ifstream file("../data/activitydata/Actividades");
     if (file.is_open())
     {
@@ -157,7 +157,9 @@ void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
                     std::getline(Actividad, date_);
                     std::getline(Actividad, hour_);
                     std::getline(Actividad, clase_);
-                    std::getline(Actividad, price_);
+                    std::getline(Actividad, precio);
+                    float price= stof(precio);
+                    SetPrice(price);
                     while(std::getline(Actividad, Inscritos)){
                         std::cout<<Inscritos<<std::endl;
                     }
@@ -199,7 +201,8 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
     SetClass(clase);
     std::cout<<"Escriba el precio de la actividad"<<std::endl;
     std::cin>>precio;
-    SetPrice(precio);
+    float price= stof(precio);
+    SetPrice(price);
     std::ifstream file("../data/activitydata/Actividades");
     if(file.is_open()){
         while(std::getline(file, nombreActividad)){
@@ -228,7 +231,7 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
         return false;
     }
 }
-bool Actividad::EliminarPreInscripcion(User usuario, std::string nombre_fichero_actividad){
+bool Actividad::EliminarPreInscripcion(user usuario, std::string nombre_fichero_actividad){
     std::string nombreActividad, data, confirmacion;
     std::ifstream file ("../data/activitydata/Actividades");
     if (file.is_open()){
