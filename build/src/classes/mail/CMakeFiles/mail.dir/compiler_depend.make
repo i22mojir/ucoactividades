@@ -227,8 +227,22 @@ src/classes/mail/CMakeFiles/mail.dir/mail.cc.o: ../src/classes/mail/mail.cc \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
-  ../src/classes/user/user.h
+  ../src/classes/user/user.h \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h
 
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/x86_64-linux-gnu/bits/environments.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -254,6 +268,8 @@ src/classes/mail/CMakeFiles/mail.dir/mail.cc.o: ../src/classes/mail/mail.cc \
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h:
 
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
 /usr/include/c++/11/bits/locale_facets_nonio.h:
 
 /usr/include/c++/11/bits/stl_relops.h:
@@ -273,6 +289,8 @@ src/classes/mail/CMakeFiles/mail.dir/mail.cc.o: ../src/classes/mail/mail.cc \
 /usr/include/c++/11/bits/stl_bvector.h:
 
 /usr/include/c++/11/bits/stl_uninitialized.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
 /usr/include/c++/11/vector:
 
@@ -444,9 +462,13 @@ src/classes/mail/CMakeFiles/mail.dir/mail.cc.o: ../src/classes/mail/mail.cc \
 
 /usr/include/c++/11/ostream:
 
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h:
 
 /usr/include/c++/11/bits/ostream_insert.h:
+
+/usr/include/linux/close_range.h:
 
 /usr/include/c++/11/debug/assertions.h:
 
@@ -591,6 +613,8 @@ src/classes/mail/CMakeFiles/mail.dir/mail.cc.o: ../src/classes/mail/mail.cc \
 /usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
 
 /usr/include/c++/11/cctype:
+
+/usr/include/unistd.h:
 
 /usr/include/x86_64-linux-gnu/sys/select.h:
 

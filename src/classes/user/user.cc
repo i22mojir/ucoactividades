@@ -139,7 +139,10 @@ bool User::CumpleRequisitosContrasena(std::string &password)
 {
     if (password.length() < 8)
     {
-        std::cout << "Error, la contraseña debe tener al menos 8 caracteres.\n";
+        system("clear");
+        printf("*****************************\n*         REGISTRO          *\n*****************************\n");
+
+        std::cout << "\nError de contraseña, debe tener al menos 8 caracteres.\n";
         return false;
     }
 
@@ -154,7 +157,10 @@ bool User::CumpleRequisitosContrasena(std::string &password)
 
     if (tieneAlMenosUnNumero==false)
     {
-        std::cout << "Error, la contraseña debe contener al menos un número.\n";
+        system("clear");
+        printf("*****************************\n*         REGISTRO          *\n*****************************\n");
+
+        std::cout << "\nError de contraseña, debe contener al menos un número.\n";
         return false;
     }
 
@@ -209,31 +215,33 @@ bool User::RegistrarUsuario()
 
     printf("Usuario: ");
     std::cin>>user_name;
-
-    while(ComprobarNombre(usuarios, user_name)==false)
-    {
-        std::cout << "Error, introduzca un nombre de usuario que no esté repetido: ";
-        std::cin>>user_name;
-    }
+    std::cin.ignore(1000, '\n');
 
     printf("Email: ");
     std::cin>>email;
-
-    while(ComprobarEmail(usuarios, email)==false)
-    {
-        std::cout << "Error, introduzca un correo que no esté repetido:\n";
-        std::cin>>email;
-    }
+    std::cin.ignore(1000, '\n');
 
     printf("Contraseña: ");
     std::cin>>password;
+    std::cin.ignore(1000, '\n');
 
-    while(CumpleRequisitosContrasena(password)==false)
+    while (CumpleRequisitosContrasena(password) == false)
     {
-        std::cout << "Introduzca de nuevo una contraseña:\n";
+        printf("\nIntroduzca una contraseña segura: \n");
         std::cin>>password;
+        std::cin.ignore(1000, '\n');
     }
+    
 
+    if (ComprobarNombre(usuarios, user_name) == false || ComprobarEmail(usuarios, email) == false)
+    {
+        system("clear");
+        printf("*****************************\n*         REGISTRO          *\n*****************************\n");
+        printf("\nError de registro, El nombre de usuario o correo ya existen\n");
+        sleep(3);
+        return false;
+    }
+    
     system("clear");
     printf("*****************************\n*         REGISTRO          *\n*****************************\n");
 
@@ -245,6 +253,7 @@ bool User::RegistrarUsuario()
     std::cout << "5. Ninguno\n";
     int interesesValue;
     std::cin >> interesesValue;
+    std::cin.ignore(1000, '\n');
 
     switch (interesesValue)
     {
@@ -276,10 +285,12 @@ bool User::RegistrarUsuario()
     if (archivo.is_open())
     {
         archivo << New.GetDetails();
-        archivo.close();
-        std::cout << "Usuario Registrado Correctamente\n" << std::endl;
-        printf("\nPulsa ENTER para volver atras\n");
+        system("clear");
+        printf("*****************************\n*         REGISTRO          *\n*****************************\n");
+        std::cout << "\nUsuario Registrado Correctamente\n" << std::endl;
+        printf("\nPulsa ENTER para volver al menu\n");
         std::cin.get();
+        archivo.close();
         return true;
     }
     else
