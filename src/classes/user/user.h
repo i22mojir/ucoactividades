@@ -39,12 +39,14 @@ public:
     void SetIntereses(Intereses intereses) { intereses_ = intereses; }
     void SetAdminStatus(bool admin_status) { admin_status_ = admin_status; }
 
-    bool IniciarSesion(std::vector<User> &usuarios, User &aux);
-    User RegistrarUsuario(std::vector<User> &usuarios);
+    std::string GetDetails();
+    std::vector<User> GetUsers();
     bool ComprobarNombre(std::vector<User> &usuarios, std::string &user_name);
     bool ComprobarEmail(std::vector<User> &usuarios, std::string &email);
     bool CumpleRequisitosContrasena(std::string &password);
-    std::vector<User> GetUsers();
+
+    User IniciarSesion();
+    bool RegistrarUsuario();
 
     std::string GetDetails() const;
 };

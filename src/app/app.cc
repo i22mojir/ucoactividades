@@ -3,54 +3,38 @@
 //SUB-MENUS
 void MenuInicioSesion()
 {
-    std::string username, password;
     User generated_user;
 
-    system("clear");
-    printf("*****************************\n*      INCIO DE SESION      *\n*****************************\n");
-    printf("Usuario:");
-    std::cin>>username;
-    generated_user.SetUserName(username);
-    std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
+    generated_user = generated_user.IniciarSesion();
 
-    printf("Contraseña:");
-    std::cin>>password;
-    generated_user.SetPassword(password);
+    printf("DEBUG: user info: %s\n", generated_user.GetDetails().c_str());
 
-    std::cin.ignore(1000, '\n'); //Limpia los 1000 caracteres depues del espacio del buffer
-
-    //Comprobacion de datos, sino la variable de intentos se decrementa
-    MenuGeneral(generated_user);
-    MenuGeneralAdmin(generated_user);
+    if (generated_user.GetUserName() == "NA" && generated_user.GetEmail() == "NA" && generated_user.GetPassword() == "NA") //Usuario que no existe
+    {
+        printf("Las credenciales no son validas\n");
+        return;
+    }
+    
+    if (generated_user.GetAdmin() == 1)
+    {
+        MenuGeneralAdmin(generated_user);
+    }else
+    {
+        MenuGeneral(generated_user);
+    }
 }
 
 void MenuRegistro()
 {
-
-    std::string username, email, password;
     User generated_user;
-    std::vector<User> user_vector;
 
-    system("clear");
-    printf("*****************************\n*         REGISTRO          *\n*****************************\n");
-
-    printf("Usuario:");
-    std::cin>>username;
-    generated_user.SetUserName(username);
-
-    std::cin.ignore(1000, '\n');
-
-    printf("Email:");
-    std::cin>>email;
-    generated_user.SetEmail(email);
-
-    std::cin.ignore(1000, '\n');
-
-    printf("Contraseña:");
-    std::cin>>password;
-    generated_user.SetPassword(password);
-
-    std::cin.ignore(1000, '\n');
+    if (generated_user.RegistrarUsuario() == true)
+    {
+        printf("Usuario Registrado Completamente\n");
+    }else
+    {
+        printf("Error al Registrar al usuario\n");
+    }
 }
 
 void MenuVerActividades(int user_is_registered, User generated_user)
@@ -292,6 +276,10 @@ void MenuGeneral(User generated_user)
 
 void MenuGeneralAdmin(User generated_user)
 {
+    system("clear");
+    printf("Sesion Iniciada correctamente!\nBienvenido administrador %s\n", generated_user.GetUserName().c_str());
+    sleep(1);
+
     char selected_option;
     while (1)
     {
