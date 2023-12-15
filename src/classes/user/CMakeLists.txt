@@ -1,1 +1,3 @@
-add_library(user_lib user.cc user.h)
+add_library(user user.cc user.h)
+target_link_libraries(user PUBLIC mail)
+target_link_libraries(user PUBLIC activity)

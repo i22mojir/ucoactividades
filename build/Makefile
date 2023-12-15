@@ -130,43 +130,43 @@ ucoactividades/fast:
 .PHONY : ucoactividades/fast
 
 #=============================================================================
-# Target rules for targets named activity_lib
+# Target rules for targets named activity
 
 # Build rule for target.
-activity_lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 activity_lib
-.PHONY : activity_lib
+activity: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 activity
+.PHONY : activity
 
 # fast build rule for target.
-activity_lib/fast:
-	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity_lib.dir/build.make src/classes/activity/CMakeFiles/activity_lib.dir/build
-.PHONY : activity_lib/fast
+activity/fast:
+	$(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/build
+.PHONY : activity/fast
 
 #=============================================================================
-# Target rules for targets named user_lib
+# Target rules for targets named user
 
 # Build rule for target.
-user_lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user_lib
-.PHONY : user_lib
+user: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user
+.PHONY : user
 
 # fast build rule for target.
-user_lib/fast:
-	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user_lib.dir/build.make src/classes/user/CMakeFiles/user_lib.dir/build
-.PHONY : user_lib/fast
+user/fast:
+	$(MAKE) $(MAKESILENT) -f src/classes/user/CMakeFiles/user.dir/build.make src/classes/user/CMakeFiles/user.dir/build
+.PHONY : user/fast
 
 #=============================================================================
-# Target rules for targets named mail_lib
+# Target rules for targets named mail
 
 # Build rule for target.
-mail_lib: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mail_lib
-.PHONY : mail_lib
+mail: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mail
+.PHONY : mail
 
 # fast build rule for target.
-mail_lib/fast:
-	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail_lib.dir/build.make src/classes/mail/CMakeFiles/mail_lib.dir/build
-.PHONY : mail_lib/fast
+mail/fast:
+	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/build
+.PHONY : mail/fast
 
 # Help Target
 help:
@@ -176,10 +176,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... activity_lib"
-	@echo "... mail_lib"
+	@echo "... activity"
+	@echo "... mail"
 	@echo "... ucoactividades"
-	@echo "... user_lib"
+	@echo "... user"
 .PHONY : help
 
 

@@ -5,13 +5,13 @@
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/CMakeFiles/rebuild_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/CMakeFiles/edit_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/activity/CMakeFiles/activity_lib.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/activity/CMakeFiles/activity.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/activity/CMakeFiles/edit_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/activity/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/user/CMakeFiles/user_lib.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/user/CMakeFiles/user.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/user/CMakeFiles/edit_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/user/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail/CMakeFiles/mail_lib.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail/CMakeFiles/mail.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail/CMakeFiles/edit_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail/CMakeFiles/rebuild_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/data/CMakeFiles/edit_cache.dir

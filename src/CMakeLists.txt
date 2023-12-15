@@ -1,3 +1,5 @@
-add_executable(ucoactividades app/app-main.cc app/app.cc)
+add_executable(ucoactividades app/app-main.cc app/app.cc app/app.h)
 add_subdirectory(classes)
-target_link_libraries(ucoactividades ncurses)
+target_link_libraries(ucoactividades PUBLIC mail)
+target_link_libraries(ucoactividades PUBLIC user)
+target_link_libraries(ucoactividades PUBLIC activity)

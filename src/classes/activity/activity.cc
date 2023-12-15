@@ -102,7 +102,7 @@ bool Actividad::CrearActividad(){
     }
     
 }
-bool Actividad::PreInscribirse(user usuario, std::string nombre_fichero_actividad){
+bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_actividad){
     std::string nombreActividad;
     std::ifstream file ("../data/activitydata/Actividades");
     if (file.is_open()){
@@ -124,7 +124,7 @@ bool Actividad::PreInscribirse(user usuario, std::string nombre_fichero_activida
                     std::cin>>confirmacion;
                         if(confirmacion == "yes"){
                             printf("La actividad se deberá pagar el proximo dia en la Universidad de Cordoba\n");
-                            Actividad<<usuario.GetuserName()<<std::endl;
+                            Actividad<<usuario.GetUserName()<<std::endl;
                             system("clear");
                             Actividad.close();
                             file.close();
@@ -255,7 +255,7 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
         return false;
     }
 }
-bool Actividad::EliminarPreInscripcion(user usuario, std::string nombre_fichero_actividad){
+bool Actividad::EliminarPreInscripcion(User usuario, std::string nombre_fichero_actividad){
     std::string nombreActividad, data, confirmacion;
     std::ifstream file ("../data/activitydata/Actividades");
     if (file.is_open()){
@@ -270,7 +270,7 @@ bool Actividad::EliminarPreInscripcion(user usuario, std::string nombre_fichero_
                     std::ifstream Actividad(nombreActividad);
                         if(Actividad.is_open()){
                             while(std::getline(Actividad, data)){
-                                if(data != usuario.GetuserName()){
+                                if(data != usuario.GetUserName()){
                                     NuevaActividad<<data<<std::endl;
                                     file.close();
                                     Actividad.close();
