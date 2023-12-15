@@ -5,19 +5,45 @@ void Mail::ViewMail(User generated_user)
     Mail generated_mail;
     std::vector<std::string> mail_vector;
     int selected_option;
-
+    std::string temp_interes; //Conversion de interes (int) a string
     std::string path="../../data/maildata"; //Especificacion de directorio
+
     system("clear");
     for (const auto it: fs::directory_iterator(path)) //Lectura de archivos del directorio al vector (nombre archivo) (utiliza <filesystem>)
     {
         if (fs::is_regular_file(it))
         {
-            //std::cout<<"DEBUG it:"<<it.path().filename().string()<<"\n"; DEBUG COUT
+            std::cout<<"DEBUG it:"<<it.path().filename().string()<<"\n";
+
+            switch (generated_user.GetIntereses())
+            {
+            case 0:
+                temp_interes = "Tecnologia";
+                break;
+
+            case 1:
+                temp_interes = "Medicina";
+                break;
+
+            case 2:
+                temp_interes = "Ciencia";
+                break;
+
+            case 3:
+                temp_interes = "Derecho";
+                break;
+            
+            default:
+                temp_interes = "NA";
+                break;
+            }
 
             size_t pos1 = it.path().filename().string().find(generated_user.GetEmail());
-            //size_t pos2 = it.path().filename().string().find(generated_user.GetIntereses()); //AÑADIR TAMB INTERESES
+            size_t pos2 = it.path().filename().string().find(temp_interes); //AÑADIR TAMB INTERESES
 
-            if (pos1 != std::string::npos) //Se encuentra la subcadena en la cadena
+            printf("DEBUG: En comparacion de intereses: <%s> - <%s>\n", temp_interes.c_str(), it.path().filename().string().c_str());
+
+            if (pos1 != std::string::npos || pos2 != std::string::npos) //Se encuentra la subcadena en la cadena
             {
                 //std::cout<<"Contiene la subcadena\n"; DEBUG COUT
                 mail_vector.push_back(it.path().filename().string());
