@@ -21,6 +21,6 @@ public:
     //void GetIntereses(){}
     bool GetAdmin(){return admin_status_;}
     bool GetBlocked(){return blocked_status_;}
-}
+};
 
 #endif

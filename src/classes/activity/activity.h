@@ -14,6 +14,20 @@
         ponencia,
         congreso
     };
+    inline tipo ToEnum(std::string v){
+        int cont=0;
+        if(v == "seminario"){cont= 1;}
+        if(v == "taller"){cont= 2;}
+        if(v == "ponencia"){cont= 3;}
+        if(v == "congreso"){cont= 4;}
+        switch(cont){
+            case 1: return seminario;
+            case 2: return taller;
+            case 3: return ponencia;
+            case 4: return congreso;
+
+        }
+    }
     class Actividad{
         private:
         std::string title_;
@@ -23,6 +37,7 @@
         std::string clase_;
         float price_;
         tipo ActType_;
+        int ActivityVisuality_;
         public:
         Actividad(std::string title= "\n", std::string description= "\n", std::string date= "\n", std::string hour= "\n", std::string clase= "\n", float price= 0.0);
 
@@ -39,6 +54,8 @@
         std::string GetDate(){return date_;}
         std::string GetClass(){return clase_;}
         float GetPrice(){return price_;}
+        tipo GetType(){return ActType_;}
+        int GetVisuality(){return ActivityVisuality_;}
 
         void SetTitle(std::string title){title_= title;}
         void SetDescription(std::string description){description_= description;}
@@ -46,6 +63,8 @@
         void SetDate(std::string date){date_= date;}
         void SetClass(std::string clase){clase_= clase;}
         void SetPrice(float price){price_= price;}
+        void SetType(tipo ActType){ActType_= ActType;}
+        void SetVisuality(int ActivityVisuality){ActivityVisuality_= ActivityVisuality;}
 };
 
 #endif
