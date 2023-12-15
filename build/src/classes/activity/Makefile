@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/rafae/uni/ucoactividades
+CMAKE_SOURCE_DIR = /home/kevin/ucoactividades
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/rafae/uni/ucoactividades/build
+CMAKE_BINARY_DIR = /home/kevin/ucoactividades/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/activity//CMakeFiles/progress.marks
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kevin/ucoactividades/build/CMakeFiles /home/kevin/ucoactividades/build/src/classes/activity//CMakeFiles/progress.marks
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin/ucoactividades/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/clean
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/preinstall
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/preinstall
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/classes/activity/CMakeFiles/activity.dir/rule:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/CMakeFiles/activity.dir/rule
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/activity/CMakeFiles/activity.dir/rule
 .PHONY : src/classes/activity/CMakeFiles/activity.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ activity: src/classes/activity/CMakeFiles/activity.dir/rule
 
 # fast build rule for target.
 activity/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/build
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/build
 .PHONY : activity/fast
 
 activity.o: activity.cc.o
@@ -135,7 +135,7 @@ activity.o: activity.cc.o
 
 # target to build an object file
 activity.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.o
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.o
 .PHONY : activity.cc.o
 
 activity.i: activity.cc.i
@@ -143,7 +143,7 @@ activity.i: activity.cc.i
 
 # target to preprocess a source file
 activity.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.i
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.i
 .PHONY : activity.cc.i
 
 activity.s: activity.cc.s
@@ -151,7 +151,7 @@ activity.s: activity.cc.s
 
 # target to generate assembly for a file
 activity.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.s
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/activity/CMakeFiles/activity.dir/build.make src/classes/activity/CMakeFiles/activity.dir/activity.cc.s
 .PHONY : activity.cc.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

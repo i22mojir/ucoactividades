@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/rafae/uni/ucoactividades
+CMAKE_SOURCE_DIR = /home/kevin/ucoactividades
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/rafae/uni/ucoactividades/build
+CMAKE_BINARY_DIR = /home/kevin/ucoactividades/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail//CMakeFiles/progress.marks
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kevin/ucoactividades/build/CMakeFiles /home/kevin/ucoactividades/build/src/classes/mail//CMakeFiles/progress.marks
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin/ucoactividades/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/clean
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/preinstall
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/preinstall
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/classes/mail/CMakeFiles/mail.dir/rule:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/CMakeFiles/mail.dir/rule
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/classes/mail/CMakeFiles/mail.dir/rule
 .PHONY : src/classes/mail/CMakeFiles/mail.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ mail: src/classes/mail/CMakeFiles/mail.dir/rule
 
 # fast build rule for target.
 mail/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/build
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/build
 .PHONY : mail/fast
 
 mail.o: mail.cc.o
@@ -135,7 +135,7 @@ mail.o: mail.cc.o
 
 # target to build an object file
 mail.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.o
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.o
 .PHONY : mail.cc.o
 
 mail.i: mail.cc.i
@@ -143,7 +143,7 @@ mail.i: mail.cc.i
 
 # target to preprocess a source file
 mail.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.i
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.i
 .PHONY : mail.cc.i
 
 mail.s: mail.cc.s
@@ -151,7 +151,7 @@ mail.s: mail.cc.s
 
 # target to generate assembly for a file
 mail.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.s
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/mail.cc.s
 .PHONY : mail.cc.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

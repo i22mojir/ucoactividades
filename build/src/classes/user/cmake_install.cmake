@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user
+# Install script for directory: /home/kevin/ucoactividades/src/classes/user
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

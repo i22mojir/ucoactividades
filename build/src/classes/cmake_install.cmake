@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/rafae/uni/ucoactividades/src/classes
+# Install script for directory: /home/kevin/ucoactividades/src/classes
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +44,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/activity/cmake_install.cmake")
-  include("/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/user/cmake_install.cmake")
-  include("/mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail/cmake_install.cmake")
+  include("/home/kevin/ucoactividades/build/src/classes/activity/cmake_install.cmake")
+  include("/home/kevin/ucoactividades/build/src/classes/user/cmake_install.cmake")
+  include("/home/kevin/ucoactividades/build/src/classes/mail/cmake_install.cmake")
 
 endif()
 

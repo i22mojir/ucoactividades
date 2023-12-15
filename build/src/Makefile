@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/rafae/uni/ucoactividades
+CMAKE_SOURCE_DIR = /home/kevin/ucoactividades
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/rafae/uni/ucoactividades/build
+CMAKE_BINARY_DIR = /home/kevin/ucoactividades/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles /mnt/c/Users/rafae/uni/ucoactividades/build/src//CMakeFiles/progress.marks
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles 0
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/kevin/ucoactividades/build/CMakeFiles /home/kevin/ucoactividades/build/src//CMakeFiles/progress.marks
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kevin/ucoactividades/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/ucoactividades.dir/rule:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ucoactividades.dir/rule
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/CMakeFiles/ucoactividades.dir/rule
 .PHONY : src/CMakeFiles/ucoactividades.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ ucoactividades: src/CMakeFiles/ucoactividades.dir/rule
 
 # fast build rule for target.
 ucoactividades/fast:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/build
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/build
 .PHONY : ucoactividades/fast
 
 app/app-main.o: app/app-main.cc.o
@@ -135,7 +135,7 @@ app/app-main.o: app/app-main.cc.o
 
 # target to build an object file
 app/app-main.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o
 .PHONY : app/app-main.cc.o
 
 app/app-main.i: app/app-main.cc.i
@@ -143,7 +143,7 @@ app/app-main.i: app/app-main.cc.i
 
 # target to preprocess a source file
 app/app-main.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app-main.cc.i
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app-main.cc.i
 .PHONY : app/app-main.cc.i
 
 app/app-main.s: app/app-main.cc.s
@@ -151,7 +151,7 @@ app/app-main.s: app/app-main.cc.s
 
 # target to generate assembly for a file
 app/app-main.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app-main.cc.s
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app-main.cc.s
 .PHONY : app/app-main.cc.s
 
 app/app.o: app/app.cc.o
@@ -159,7 +159,7 @@ app/app.o: app/app.cc.o
 
 # target to build an object file
 app/app.cc.o:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app.cc.o
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app.cc.o
 .PHONY : app/app.cc.o
 
 app/app.i: app/app.cc.i
@@ -167,7 +167,7 @@ app/app.i: app/app.cc.i
 
 # target to preprocess a source file
 app/app.cc.i:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app.cc.i
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app.cc.i
 .PHONY : app/app.cc.i
 
 app/app.s: app/app.cc.s
@@ -175,7 +175,7 @@ app/app.s: app/app.cc.s
 
 # target to generate assembly for a file
 app/app.cc.s:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app.cc.s
+	cd /home/kevin/ucoactividades/build && $(MAKE) $(MAKESILENT) -f src/CMakeFiles/ucoactividades.dir/build.make src/CMakeFiles/ucoactividades.dir/app/app.cc.s
 .PHONY : app/app.cc.s
 
 # Help Target
@@ -204,6 +204,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

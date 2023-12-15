@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/Users/rafae/uni/ucoactividades
+CMAKE_SOURCE_DIR = /home/kevin/ucoactividades
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/Users/rafae/uni/ucoactividades/build
+CMAKE_BINARY_DIR = /home/kevin/ucoactividades/build
 
 # Include any dependencies generated for this target.
 include src/CMakeFiles/ucoactividades.dir/depend.make
@@ -72,30 +72,30 @@ include src/CMakeFiles/ucoactividades.dir/flags.make
 src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: src/CMakeFiles/ucoactividades.dir/flags.make
 src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: ../src/app/app-main.cc
 src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: src/CMakeFiles/ucoactividades.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o -MF CMakeFiles/ucoactividades.dir/app/app-main.cc.o.d -o CMakeFiles/ucoactividades.dir/app/app-main.cc.o -c /mnt/c/Users/rafae/uni/ucoactividades/src/app/app-main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o"
+	cd /home/kevin/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o -MF CMakeFiles/ucoactividades.dir/app/app-main.cc.o.d -o CMakeFiles/ucoactividades.dir/app/app-main.cc.o -c /home/kevin/ucoactividades/src/app/app-main.cc
 
 src/CMakeFiles/ucoactividades.dir/app/app-main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ucoactividades.dir/app/app-main.cc.i"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/rafae/uni/ucoactividades/src/app/app-main.cc > CMakeFiles/ucoactividades.dir/app/app-main.cc.i
+	cd /home/kevin/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kevin/ucoactividades/src/app/app-main.cc > CMakeFiles/ucoactividades.dir/app/app-main.cc.i
 
 src/CMakeFiles/ucoactividades.dir/app/app-main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ucoactividades.dir/app/app-main.cc.s"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/rafae/uni/ucoactividades/src/app/app-main.cc -o CMakeFiles/ucoactividades.dir/app/app-main.cc.s
+	cd /home/kevin/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevin/ucoactividades/src/app/app-main.cc -o CMakeFiles/ucoactividades.dir/app/app-main.cc.s
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o: src/CMakeFiles/ucoactividades.dir/flags.make
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o: src/CMakeFiles/ucoactividades.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/ucoactividades.dir/app/app.cc.o"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ucoactividades.dir/app/app.cc.o -MF CMakeFiles/ucoactividades.dir/app/app.cc.o.d -o CMakeFiles/ucoactividades.dir/app/app.cc.o -c /mnt/c/Users/rafae/uni/ucoactividades/src/app/app.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kevin/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/ucoactividades.dir/app/app.cc.o"
+	cd /home/kevin/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/ucoactividades.dir/app/app.cc.o -MF CMakeFiles/ucoactividades.dir/app/app.cc.o.d -o CMakeFiles/ucoactividades.dir/app/app.cc.o -c /home/kevin/ucoactividades/src/app/app.cc
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ucoactividades.dir/app/app.cc.i"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/c/Users/rafae/uni/ucoactividades/src/app/app.cc > CMakeFiles/ucoactividades.dir/app/app.cc.i
+	cd /home/kevin/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/kevin/ucoactividades/src/app/app.cc > CMakeFiles/ucoactividades.dir/app/app.cc.i
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ucoactividades.dir/app/app.cc.s"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/c/Users/rafae/uni/ucoactividades/src/app/app.cc -o CMakeFiles/ucoactividades.dir/app/app.cc.s
+	cd /home/kevin/ucoactividades/build/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/kevin/ucoactividades/src/app/app.cc -o CMakeFiles/ucoactividades.dir/app/app.cc.s
 
 # Object files for target ucoactividades
 ucoactividades_OBJECTS = \
@@ -115,18 +115,18 @@ src/ucoactividades: src/classes/mail/libmail.a
 src/ucoactividades: src/classes/user/libuser.a
 src/ucoactividades: src/classes/activity/libactivity.a
 src/ucoactividades: src/CMakeFiles/ucoactividades.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/c/Users/rafae/uni/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ucoactividades"
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ucoactividades.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kevin/ucoactividades/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ucoactividades"
+	cd /home/kevin/ucoactividades/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ucoactividades.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 src/CMakeFiles/ucoactividades.dir/build: src/ucoactividades
 .PHONY : src/CMakeFiles/ucoactividades.dir/build
 
 src/CMakeFiles/ucoactividades.dir/clean:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build/src && $(CMAKE_COMMAND) -P CMakeFiles/ucoactividades.dir/cmake_clean.cmake
+	cd /home/kevin/ucoactividades/build/src && $(CMAKE_COMMAND) -P CMakeFiles/ucoactividades.dir/cmake_clean.cmake
 .PHONY : src/CMakeFiles/ucoactividades.dir/clean
 
 src/CMakeFiles/ucoactividades.dir/depend:
-	cd /mnt/c/Users/rafae/uni/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/c/Users/rafae/uni/ucoactividades /mnt/c/Users/rafae/uni/ucoactividades/src /mnt/c/Users/rafae/uni/ucoactividades/build /mnt/c/Users/rafae/uni/ucoactividades/build/src /mnt/c/Users/rafae/uni/ucoactividades/build/src/CMakeFiles/ucoactividades.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/kevin/ucoactividades/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kevin/ucoactividades /home/kevin/ucoactividades/src /home/kevin/ucoactividades/build /home/kevin/ucoactividades/build/src /home/kevin/ucoactividades/build/src/CMakeFiles/ucoactividades.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/CMakeFiles/ucoactividades.dir/depend
 

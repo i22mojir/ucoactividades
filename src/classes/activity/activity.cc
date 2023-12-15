@@ -7,7 +7,7 @@ Actividad::Actividad(std::string title, std::string description, std::string dat
 void Actividad::VerInformacionActividad(std::string nombre_fichero_actividad){
     std::string nombreActividad, price, tipo, ActivityVisuality;
     std::string::size_type sz;
-    std::ifstream file ("../data/activitydata/Actividades");
+    std::ifstream file ("../../data/activitydata/Actividades.txt");
     if (file.is_open()){
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
@@ -76,7 +76,7 @@ bool Actividad::CrearActividad(){
     std::cin>>ActivityVisuality;
     int ActVisuality = std::stoi(ActivityVisuality);
     SetVisuality(ActVisuality);
-    std::ofstream file("../data/activitydata/Actividades",std::ios::app);
+    std::ofstream file("../../data/activitydata/Actividades.txt",std::ios::app);
     if(file.is_open()){
         file<<NombreActividad;
         file.close();
@@ -104,7 +104,7 @@ bool Actividad::CrearActividad(){
 }
 bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_actividad){
     std::string nombreActividad;
-    std::ifstream file ("../data/activitydata/Actividades");
+    std::ifstream file ("../../data/activitydata/Actividades.txt");
     if (file.is_open()){
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
@@ -112,7 +112,7 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
                 nombreActividad= "../data/activitydata/" + nombreActividad;
                 std::ofstream Actividad(nombreActividad, std::ios::app);
                 if(Actividad.is_open() && price_ == 0.0){
-                    Actividad<<usuario.GetuserName()<<std::endl;
+                    Actividad<<usuario.GetUserName()<<std::endl;
                     Actividad.close();
                     file.close();
                     return true;
@@ -155,7 +155,7 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
 }
 void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
   std::string nombreActividad, precio, tipo, ActivityVisuality;
-    std::ifstream file("../data/activitydata/Actividades");
+    std::ifstream file("../../data/activitydata/Actividades.txt");
     if (file.is_open())
     {
         while(std::getline(file, nombreActividad)){
@@ -227,12 +227,12 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
     std::cin>>ActivityVisuality;
     int ActVisuality = std::stoi(ActivityVisuality);
     SetVisuality(ActVisuality);
-    std::ifstream file("../data/activitydata/Actividades");
+    std::ifstream file("../../data/activitydata/Actividades.txt");
     if(file.is_open()){
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
                 nombreActividad= "../data/activitydata/" + nombreActividad;
-                std::ofstream Actividad(NombreActividad);
+                std::ofstream Actividad(nombreActividad);
                     if(Actividad.is_open()){
                         Actividad<<titulo<<"\n"<<descripcion<<"\n"<<fecha<<"\n"<<hora<<"\n"<<clase<<"\n"<<precio<<std::endl;
                         Actividad.close();
@@ -257,15 +257,15 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
 }
 bool Actividad::EliminarPreInscripcion(User usuario, std::string nombre_fichero_actividad){
     std::string nombreActividad, data, confirmacion;
-    std::ifstream file ("../data/activitydata/Actividades");
+    std::ifstream file ("../../data/activitydata/Actividades.txt");
     if (file.is_open()){
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
-                VerInformacionActividad(nombreActividad);
+                VerInformacionActividad((std::string)nombreActividad);
                 std::cout<<"Esta seguro que quiere eliminarse de esta actividad\n Diga yes si quiere eliminarse y diga no si no quiere"<<std::endl;
                 std::cin>>confirmacion;
                 if(confirmacion == "yes"){
-                    nombreActividad= "../data/activitydata/" + nombreActividad;
+                    nombreActividad= "../../data/activitydata/" + nombreActividad;
                     std::ofstream NuevaActividad("../data/activitydata/ActividadRemplazo");
                     std::ifstream Actividad(nombreActividad);
                         if(Actividad.is_open()){
@@ -274,7 +274,7 @@ bool Actividad::EliminarPreInscripcion(User usuario, std::string nombre_fichero_
                                     NuevaActividad<<data<<std::endl;
                                     file.close();
                                     Actividad.close();
-                                    rename("../data/activitydata/ActividadRemplazo", nombreActividad);
+                                    rename("../data/activitydata/ActividadRemplazo", (char*)&nombreActividad);
                                     NuevaActividad.close();
                                     return true;
                                 }

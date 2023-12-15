@@ -25,9 +25,8 @@
             case 2: return taller;
             case 3: return ponencia;
             case 4: return congreso;
-
         }
-    }
+    };
     class Actividad{
         private:
         std::string title_;

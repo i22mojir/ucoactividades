@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/c/Users/rafae/uni/ucoactividades
+# Install script for directory: /home/kevin/ucoactividades
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/mnt/c/Users/rafae/uni/ucoactividades/build/src/cmake_install.cmake")
-  include("/mnt/c/Users/rafae/uni/ucoactividades/build/data/cmake_install.cmake")
+  include("/home/kevin/ucoactividades/build/src/cmake_install.cmake")
+  include("/home/kevin/ucoactividades/build/data/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/mnt/c/Users/rafae/uni/ucoactividades/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/kevin/ucoactividades/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

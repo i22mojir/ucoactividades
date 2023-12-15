@@ -1,7 +1,7 @@
 src/classes/user/CMakeFiles/user.dir/user.cc.o: \
- /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user/user.cc \
+ /home/kevin/ucoactividades/src/classes/user/user.cc \
  /usr/include/stdc-predef.h \
- /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user/user.h \
+ /home/kevin/ucoactividades/src/classes/user/user.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
