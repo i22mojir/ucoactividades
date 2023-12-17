@@ -3,11 +3,9 @@
     #include <iostream>
     #include <string>
     #include "../user/user.h"
-    #include <vector>
     #include <filesystem>
     #include <fstream>
-    #include <stdlib.h>
-    #include <bits/stdc++.h>
+    #include <cstdlib>
     enum tipo{
         seminario,
         taller,

@@ -1,17 +1,18 @@
 #include "activity.h"
-
+#include <string>
 Actividad::Actividad(std::string title, std::string description, std::string date, std::string hour, std::string clase, float price){
 
 }
 
 void Actividad::VerInformacionActividad(std::string nombre_fichero_actividad){
-    std::string nombreActividad, price, tipo, ActivityVisuality;
+    std::string nombreActividad, ActivityVisuality;
+    std::string title, description, date, hour, clase, price, tipo;
     std::string::size_type sz;
     std::ifstream file ("../../data/activitydata/Actividades.txt");
     if (file.is_open()){
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
-                nombreActividad= "../data/activitydata/" + nombreActividad;
+                nombreActividad= "../../data/activitydata/" + nombreActividad;
                 std::ifstream Actividad(nombreActividad);
                 if(Actividad.is_open()){
                     std::getline(Actividad, title_);
@@ -20,24 +21,29 @@ void Actividad::VerInformacionActividad(std::string nombre_fichero_actividad){
                     std::getline(Actividad, hour_);
                     std::getline(Actividad, clase_);
                     std::getline(Actividad, price);
-                    price_= std::stof(price);
+                    //price_= std::stof(price);
                     std::getline(Actividad, tipo);
                     SetType(ToEnum(tipo));
                     std::getline(Actividad, ActivityVisuality);
-                    int ActVisuality = std::stoi(ActivityVisuality);
-                    SetVisuality(ActVisuality);
-                    std::cout<<title_<<"\n"<<description_<<"\n"<<date_<<"\n"<<hour_<<"\n"<<clase_<<"\n"<<price_<<std::endl;
+                    //int ActVisuality = std::stoi(ActivityVisuality);
+                    //SetVisuality(ActVisuality);
+                    std::cout<<title_<<"\n"<<description_<<"\n"<<date_<<"\n"<<hour_<<"\n"<<clase_<<"\n"<<price<<"\n"<<tipo<<"\n"<<ActivityVisuality<<"\n";
                     Actividad.close();
+                    file.close();
+                    return;
                 }
                 else{
-                    system("clear");
+                    //system("clear");
                     printf("Ha ocurrido un error al abrir el fichero de la actividad\nPresione ENTER para volver atras\n");
                     std::cin.get();
                     return;  
                 }
             }
         }
+        std::cout<<"No se ha encontrado el fichero que de la actividad\nPresione ENTER para volver atras";
         file.close();
+        std::cin.get();
+        return;
     }
     else{
         system("clear");
@@ -48,7 +54,7 @@ void Actividad::VerInformacionActividad(std::string nombre_fichero_actividad){
 }
 bool Actividad::CrearActividad(){
     std::string NombreActividad, titulo, descripcion, fecha, hora, clase, precio, tipo, ActivityVisuality;
-    std::cout<<"Escriba el nombre de la actividad"<<std::endl;
+    std::cout<<"Escriba el nombre de la actividad <<recuerde el .txt al final del nombre>>"<<std::endl;
     std::cin>>NombreActividad;
     std::cout<<"Escriba el titulo de la actividad"<<std::endl;
     std::cin>>titulo;
@@ -67,20 +73,20 @@ bool Actividad::CrearActividad(){
     SetClass(clase);
     std::cout<<"Escriba el precio de la actividad"<<std::endl;
     std::cin>>precio;
-    float price = std::stof(precio);
-    SetPrice(price);
+    //float price = std::stof(precio);
+    //SetPrice(price);
     std::cout<<"Escriba el tipo de la actividad <<seminario, taller, ponencia, congreso>>"<<std::endl;
     std::cin>>tipo;
     SetType(ToEnum(tipo));
     std::cout<<"Quiere que sea visible para los demas usuarios?\n Escriba 0 si no quiere que lo vea y 1 para que si lo vean"<<std::endl;
     std::cin>>ActivityVisuality;
-    int ActVisuality = std::stoi(ActivityVisuality);
-    SetVisuality(ActVisuality);
+    //int ActVisuality = std::stoi(ActivityVisuality);
+    //SetVisuality(ActVisuality);
     std::ofstream file("../../data/activitydata/Actividades.txt",std::ios::app);
     if(file.is_open()){
         file<<NombreActividad;
         file.close();
-        NombreActividad="../data/activitydata/" + NombreActividad;
+        NombreActividad="../../data/activitydata/" + NombreActividad;
         std::ofstream Actividad(NombreActividad);
         if(Actividad.is_open()){
             Actividad<<titulo<<"\n"<<descripcion<<"\n"<<fecha<<"\n"<<hora<<"\n"<<clase<<"\n"<<precio<<"\n"<<tipo<<"\n"<<ActivityVisuality<<std::endl;
@@ -109,10 +115,10 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
                 VerInformacionActividad(nombreActividad);
-                nombreActividad= "../data/activitydata/" + nombreActividad;
+                nombreActividad= "../../data/activitydata/" + nombreActividad;
                 std::ofstream Actividad(nombreActividad, std::ios::app);
                 if(Actividad.is_open() && price_ == 0.0){
-                    Actividad<<usuario.GetUserName()<<std::endl;
+                    Actividad<<usuario.GetUserName()<<"\n";
                     Actividad.close();
                     file.close();
                     return true;
@@ -125,13 +131,11 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
                         if(confirmacion == "yes"){
                             printf("La actividad se deberá pagar el proximo dia en la Universidad de Cordoba\n");
                             Actividad<<usuario.GetUserName()<<std::endl;
-                            system("clear");
                             Actividad.close();
                             file.close();
                             return true;
                         }
                         else if (confirmacion == "no"){
-                            system("clear");
                             printf("Se ha cancelado la operacion\nPresione ENTER para volver atras\n");
                             std::cin.get();
                             return false;
@@ -145,6 +149,11 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
                 }
             }
         }
+        std::cout<<"No se ha encontrado el fichero que de la actividad\nPresione ENTER para volver atras";
+        file.close();
+        std::cin.get();
+        return false;
+        
     }
     else{
         system("clear");
@@ -160,7 +169,7 @@ void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
     {
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
-                nombreActividad= "../data/activitydata/" + nombreActividad;
+                nombreActividad= "../../data/activitydata/" + nombreActividad;
                 std::ifstream Actividad(nombreActividad);
                 if(Actividad.is_open()){
                     std::string Inscritos;
@@ -170,17 +179,18 @@ void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
                     std::getline(Actividad, hour_);
                     std::getline(Actividad, clase_);
                     std::getline(Actividad, precio);
-                    float price= stof(precio);
-                    SetPrice(price);
+                    //float price= stof(precio);
+                    //SetPrice(price);
                     std::getline(Actividad, tipo);
                     SetType(ToEnum(tipo));
                     std::getline(Actividad, ActivityVisuality);
-                    int ActVisuality= stoi(ActivityVisuality);
-                    SetVisuality(ActVisuality);
+                    //int ActVisuality= stoi(ActivityVisuality);
+                    //SetVisuality(ActVisuality);
                     while(std::getline(Actividad, Inscritos)){
                         std::cout<<Inscritos<<std::endl;
                     }
                     Actividad.close();
+                    return;
                 }
                 else{
                 system("clear");
@@ -190,7 +200,10 @@ void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
                 }
             }
         }
+    printf("No existe un fichero con ese nombre\nPresione ENTER para volver atras\n");
+    std::cin.get(); 
     file.close();
+    return;
     }
     else{
         system("clear");
@@ -201,37 +214,37 @@ void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
 }
 bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
     std::string nombreActividad, titulo, descripcion, fecha, hora, clase, precio, tipo, ActivityVisuality;
-    std::cout<<"Escriba el titulo de la actividad"<<std::endl;
-    std::cin>>titulo;
-    SetTitle(titulo);
-    std::cout<<"Escriba la descripcion de la actividad"<<std::endl;
-    std::cin>>descripcion;
-    SetDescription(descripcion);
-    std::cout<<"Escriba la fecha de la actividad"<<std::endl;
-    std::cin>>fecha;
-    SetDate(fecha);
-    std::cout<<"Escriba la hora de la actividad"<<std::endl;
-    std::cin>>hora;
-    SetHour(hora);
-    std::cout<<"Escriba el aula de la actividad"<<std::endl;
-    std::cin>>clase;
-    SetClass(clase);
-    std::cout<<"Escriba el precio de la actividad"<<std::endl;
-    std::cin>>precio;
-    float price= stof(precio);
-    SetPrice(price);
-    std::cout<<"Escriba el tipo de la actividad <<seminario, taller, ponencia, congreso>>"<<std::endl;
-    std::cin>>tipo;
-    SetType(ToEnum(tipo));
-    std::cout<<"Quiere que sea visible para los demas usuarios?\n Escriba 0 si no quiere que lo vea y 1 para que si lo vean"<<std::endl;
-    std::cin>>ActivityVisuality;
-    int ActVisuality = std::stoi(ActivityVisuality);
-    SetVisuality(ActVisuality);
     std::ifstream file("../../data/activitydata/Actividades.txt");
     if(file.is_open()){
         while(std::getline(file, nombreActividad)){
             if( nombreActividad == nombre_fichero_actividad){
-                nombreActividad= "../data/activitydata/" + nombreActividad;
+                std::cout<<"Escriba el titulo de la actividad"<<std::endl;
+                std::cin>>titulo;
+                SetTitle(titulo);
+                std::cout<<"Escriba la descripcion de la actividad"<<std::endl;
+                std::cin>>descripcion;
+                SetDescription(descripcion);
+                std::cout<<"Escriba la fecha de la actividad"<<std::endl;
+                std::cin>>fecha;
+                SetDate(fecha);
+                std::cout<<"Escriba la hora de la actividad"<<std::endl;
+                std::cin>>hora;
+                SetHour(hora);
+                std::cout<<"Escriba el aula de la actividad"<<std::endl;
+                std::cin>>clase;
+                SetClass(clase);
+                std::cout<<"Escriba el precio de la actividad"<<std::endl;
+                std::cin>>precio;
+                //float price= stof(precio);
+                //SetPrice(price);
+                std::cout<<"Escriba el tipo de la actividad <<seminario, taller, ponencia, congreso>>"<<std::endl;
+                std::cin>>tipo;
+                SetType(ToEnum(tipo));
+                std::cout<<"Quiere que sea visible para los demas usuarios?\n Escriba 0 si no quiere que lo vea y 1 para que si lo vean"<<std::endl;
+                std::cin>>ActivityVisuality;
+                //int ActVisuality = std::stoi(ActivityVisuality);
+                //SetVisuality(ActVisuality);
+                nombreActividad= "../../data/activitydata/" + nombreActividad;
                 std::ofstream Actividad(nombreActividad);
                     if(Actividad.is_open()){
                         Actividad<<titulo<<"\n"<<descripcion<<"\n"<<fecha<<"\n"<<hora<<"\n"<<clase<<"\n"<<precio<<std::endl;
@@ -247,6 +260,10 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
                     }
             }
         }
+        printf("No existe un fichero con ese nombre\nPresione ENTER para volver atras\n");
+        std::cin.get(); 
+        file.close();
+        return false;
     }
     else{
         system("clear");
@@ -266,19 +283,20 @@ bool Actividad::EliminarPreInscripcion(User usuario, std::string nombre_fichero_
                 std::cin>>confirmacion;
                 if(confirmacion == "yes"){
                     nombreActividad= "../../data/activitydata/" + nombreActividad;
-                    std::ofstream NuevaActividad("../data/activitydata/ActividadRemplazo");
+                    std::ofstream NuevaActividad("../../data/activitydata/ActividadRemplazo");
                     std::ifstream Actividad(nombreActividad);
                         if(Actividad.is_open()){
                             while(std::getline(Actividad, data)){
                                 if(data != usuario.GetUserName()){
-                                    NuevaActividad<<data<<std::endl;
-                                    file.close();
-                                    Actividad.close();
-                                    rename("../data/activitydata/ActividadRemplazo", (char*)&nombreActividad);
-                                    NuevaActividad.close();
-                                    return true;
+                                    NuevaActividad<<data<<"\n";
+                                    
                                 }
                             }
+                            file.close();
+                            Actividad.close();
+                            //rename("../../data/activitydata/ActividadRemplazo", nombreActividad);
+                            NuevaActividad.close();
+                            return true;
                         }
                         else{
                             system("clear");
