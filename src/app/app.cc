@@ -110,7 +110,7 @@ void DetallesActividadSinRegistro()
         {
         case '1':
             std::cin.ignore(1000, '\n');
-            //Ver informacion de actividad
+            //Activity::VerInformacionActividad();
             break;
 
         case '2':
