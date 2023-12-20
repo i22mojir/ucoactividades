@@ -6,6 +6,8 @@
     #include <filesystem>
     #include <fstream>
     #include <cstdlib>
+    #include <string.h>
+    #include <unistd.h>
     enum tipo{
         seminario,
         taller,
@@ -32,6 +34,7 @@
         std::string date_;
         std::string hour_;
         std::string clase_;
+        std::string speaker_;
         float price_;
         tipo ActType_;
         int ActivityVisuality_;
@@ -44,12 +47,14 @@
         void MostrarListaInscritos(std::string nombre_fichero_actividad);
         bool ModificarActividad(std::string nombre_fichero_actividad);
         bool EliminarPreInscripcion(User usuario, std::string nombre_fichero_actividad);
+        bool EstaPreInscrito(User usuario, std::string nombre_fichero_actividad);
 
         std::string GetTitle(){return title_;}
         std::string GetDescription(){return description_;}
         std::string GetHour(){return hour_;}
         std::string GetDate(){return date_;}
         std::string GetClass(){return clase_;}
+        std::string GetSpeaker(){return speaker_;}
         float GetPrice(){return price_;}
         tipo GetType(){return ActType_;}
         int GetVisuality(){return ActivityVisuality_;}
@@ -59,6 +64,7 @@
         void SetHour(std::string hour){hour_= hour;}
         void SetDate(std::string date){date_= date;}
         void SetClass(std::string clase){clase_= clase;}
+        void SetSpeaker(std::string speaker){speaker_= speaker;}
         void SetPrice(float price){price_= price;}
         void SetType(tipo ActType){ActType_= ActType;}
         void SetVisuality(int ActivityVisuality){ActivityVisuality_= ActivityVisuality;}
