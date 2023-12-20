@@ -196,8 +196,6 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: ../src/app/app-main.cc \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/c++/11/stdlib.h \
-  ../src/classes/user/user.h \
-  ../src/classes/mail/mail.h \
   /usr/include/c++/11/filesystem \
   /usr/include/c++/11/bits/fs_fwd.h \
   /usr/include/c++/11/chrono \
@@ -234,12 +232,15 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: ../src/app/app-main.cc \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/fs_dir.h \
   /usr/include/c++/11/bits/fs_ops.h \
+  ../src/classes/user/user.h \
+  ../src/classes/mail/mail.h \
   /usr/include/c++/11/fstream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
   ../src/classes/user/user.h \
-  ../src/classes/activity/activity.h
+  ../src/classes/activity/activity.h \
+  ../src/classes/user/user.h
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/stdc-predef.h \
@@ -436,8 +437,6 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
   /usr/include/linux/close_range.h \
   /usr/include/c++/11/stdlib.h \
-  ../src/classes/user/user.h \
-  ../src/classes/mail/mail.h \
   /usr/include/c++/11/filesystem \
   /usr/include/c++/11/bits/fs_fwd.h \
   /usr/include/c++/11/chrono \
@@ -474,12 +473,15 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/c++/11/ext/aligned_buffer.h \
   /usr/include/c++/11/bits/fs_dir.h \
   /usr/include/c++/11/bits/fs_ops.h \
+  ../src/classes/user/user.h \
+  ../src/classes/mail/mail.h \
   /usr/include/c++/11/fstream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
   /usr/include/c++/11/bits/fstream.tcc \
   ../src/classes/user/user.h \
-  ../src/classes/activity/activity.h
+  ../src/classes/activity/activity.h \
+  ../src/classes/user/user.h
 
 
 /usr/include/c++/11/bits/fstream.tcc:
@@ -487,6 +489,8 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
 /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h:
+
+../src/classes/mail/mail.h:
 
 /usr/include/c++/11/bits/fs_ops.h:
 
@@ -517,8 +521,6 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
 /usr/include/c++/11/bits/fs_fwd.h:
 
 /usr/include/c++/11/filesystem:
-
-../src/classes/mail/mail.h:
 
 /usr/include/c++/11/stdlib.h:
 
@@ -596,9 +598,9 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
 
 /usr/include/stdio.h:
 
-/usr/include/c++/11/chrono:
-
 ../src/classes/user/user.h:
+
+/usr/include/c++/11/chrono:
 
 /usr/include/c++/11/cstdio:
 

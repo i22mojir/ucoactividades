@@ -3,3 +3,8 @@ ucoactividadesadmin@uco.es
 ucoadmin023
 5
 1
+user
+user
+12345678
+0
+0

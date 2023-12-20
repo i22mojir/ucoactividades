@@ -32,9 +32,9 @@
         std::string date_;
         std::string hour_;
         std::string clase_;
-        float price_;
+        std::string price_;
         tipo ActType_;
-        int ActivityVisuality_;
+        std::string ActivityVisuality_;
         public:
         Actividad(std::string title= "\n", std::string description= "\n", std::string date= "\n", std::string hour= "\n", std::string clase= "\n", float price= 0.0);
 
@@ -50,18 +50,18 @@
         std::string GetHour(){return hour_;}
         std::string GetDate(){return date_;}
         std::string GetClass(){return clase_;}
-        float GetPrice(){return price_;}
+        std::string GetPrice(){return price_;}
         tipo GetType(){return ActType_;}
-        int GetVisuality(){return ActivityVisuality_;}
+        std::string GetVisuality(){return ActivityVisuality_;}
 
         void SetTitle(std::string title){title_= title;}
         void SetDescription(std::string description){description_= description;}
         void SetHour(std::string hour){hour_= hour;}
         void SetDate(std::string date){date_= date;}
         void SetClass(std::string clase){clase_= clase;}
-        void SetPrice(float price){price_= price;}
+        void SetPrice(std::string price){price_= price;}
         void SetType(tipo ActType){ActType_= ActType;}
-        void SetVisuality(int ActivityVisuality){ActivityVisuality_= ActivityVisuality;}
+        void SetVisuality(std::string ActivityVisuality){ActivityVisuality_= ActivityVisuality;}
 };
 
 #endif
