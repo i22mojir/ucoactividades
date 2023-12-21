@@ -66,10 +66,19 @@ void MenuVerActividades(int user_is_registered, User generated_user)
 
     if (activity_vector.size() < 1)
     {
+
+        if (user_is_registered == 1)
+        {
+            printf("No hay Actividades Actualmente\n");
+            printf("\nPresiona ENTER para volver\n");
+            return;
+        }
+        
         printf("No hay Actividades Actualmente\n");
         printf("\nPresiona ENTER para volver\n");
-        std::cin.get();
+        std::cin.ignore(1000, '\n');
         return;
+    
     }
     
     printf("\nIndique numero del actividad para verla: ");

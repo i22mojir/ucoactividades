@@ -213,11 +213,11 @@ bool User::RegistrarUsuario()
     system("clear");
     printf("*****************************\n*         REGISTRO          *\n*****************************\n");
 
-    printf("Usuario: ");
+    printf("Usuario (usuario UCO): ");
     std::cin>>user_name;
     std::cin.ignore(1000, '\n');
 
-    printf("Email: ");
+    printf("Email (@uco.es): ");
     std::cin>>email;
     std::cin.ignore(1000, '\n');
 
