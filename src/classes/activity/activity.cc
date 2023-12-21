@@ -157,7 +157,7 @@ bool Actividad::PreInscribirse(User usuario, std::string nombre_fichero_activida
     std::string nombreActividad;
     std::ifstream file("../../data/activitiesdata/Actividades.txt");
     if(EstaPreInscrito(usuario, nombre_fichero_actividad) == true){
-        printf("Ya estas preinscrito en esta actividad\n\nPresione ENTER para volver atras");
+        //printf("Ya estas preinscrito en la actividad\nPresione ENTER para volver atras\n");
         std::cin.get();
         return false;
     }
@@ -286,7 +286,9 @@ void Actividad::MostrarListaInscritos(std::string nombre_fichero_actividad){
     }  
 }
 bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
-     std::string nombreActividad, titulo, descripcion, fecha, hora, clase, speaker, precio, tipo, ActivityVisuality;
+    std::string data;
+    std::vector<std::string> Insc;
+     std::string nombreActividad, titulo, descripcion, fecha, hora, clase, speaker, precio, tipo, type, ActivityVisuality;
     std::ifstream file("../../data/activitiesdata/Actividades.txt");
     if(file.is_open()){
         while(std::getline(file, nombreActividad)){
@@ -359,8 +361,6 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
                 system("clear");
                 nombreActividad= "../../data/activitiesdata/" + nombreActividad;
                 std::ifstream Inscritos(nombreActividad);
-                std::string data;
-                std::vector<std::string> Insc;
                     if(Inscritos.is_open()){
 
                         std::getline(Inscritos, title_);
@@ -370,13 +370,8 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
                         std::getline(Inscritos, clase_);
                         std::getline(Inscritos, speaker_);
                         std::getline(Inscritos, precio);
-                        float price= std::stof(precio);
-                        SetPrice(price);
-                        std::getline(Inscritos, tipo);
-                        SetType(ToEnum(tipo));
+                        std::getline(Inscritos, type);
                         std::getline(Inscritos, ActivityVisuality);
-                        int ActVisuality= std::stoi(ActivityVisuality);
-                        SetVisuality(ActVisuality);
                         while(std::getline(Inscritos, data)){
                             Insc.push_back(data);
                         }
@@ -390,9 +385,9 @@ bool Actividad::ModificarActividad(std::string nombre_fichero_actividad){
                     }
                 std::ofstream Actividad(nombreActividad);
                     if(Actividad.is_open()){
-                        Actividad<<titulo<<"\n"<<descripcion<<"\n"<<fecha<<"\n"<<hora<<"\n"<<clase<<"\n"<<precio<<"\n"<<tipo<<std::endl;
-                        for(int i= 0; i <= Insc.size(); i++){
-                            Actividad<<Insc[i]<<std::endl;
+                        Actividad<<titulo<<"\n"<<descripcion<<"\n"<<fecha<<"\n"<<hora<<"\n"<<clase<<"\n"<<speaker<<"\n"<<price_<<"\n"<<tipo<<"\n"<<ActivityVisuality_<<std::endl;
+                        for(std::vector<std::string>::iterator i= Insc.begin(); i != Insc.end(); i++){
+                            Actividad<<*i<<std::endl;
                         }
                         Actividad.close();
                         file.close();
@@ -475,7 +470,6 @@ bool Actividad::EliminarPreInscripcion(User usuario, std::string nombre_fichero_
     } 
 }
 bool Actividad::EstaPreInscrito(User usuario, std::string nombre_fichero_actividad){
-    int count= 0;
     std::string nombreActividad, precio, ActivityVisuality, tipo;
     std::ifstream file("../../data/activitiesdata/Actividades.txt");
 
@@ -502,23 +496,22 @@ bool Actividad::EstaPreInscrito(User usuario, std::string nombre_fichero_activid
                     SetVisuality(ActVisuality);
                         while(std::getline(Actividad, Inscritos)){
                             if(Inscritos == usuario.GetUserName()){
-                                std::cout<<"estas inscrito en esta actividad"<<std::endl;
                                 file.close();
                                 Actividad.close();
+                                std::cout<<"estas preinscrito en esta actividad\n\nPresione ENTER para volver atras"<<std::endl;
                                 return true;
                             }
                         }
-
-                    printf("\nNo estas preinscritos en la actividad seleccionada\n");
-                    printf("\nPresione ENTER para volver atras\n");
-                    Actividad.close();
-                    file.close();
-                    std::cin.get();
-                    return false;
+                        Actividad.close();
+                        file.close();
+                        printf("\nNo estas preinscrito en la actividad seleccionada\n");
+                        printf("\nPresione ENTER para volver atras\n");
+                        std::cin.get();
+                        return false;
                 }
                 else{
                     system("clear");
-                    printf("ERROR al ver si estas preinscrito en la acttividad\n\nPresione ENTER para volver atras\n");
+                    printf("ERROR al ver si estas preinscrito en la actividad\n\nPresione ENTER para volver atras\n");
                     std::cin.get();
                     return false; 
                 }
@@ -526,15 +519,13 @@ bool Actividad::EstaPreInscrito(User usuario, std::string nombre_fichero_activid
         }
     file.close();
     system("clear");
-    printf("ERROR la acttividad no Existe\n\nPresione ENTER para volver atras\n");
+    printf("ERROR la actividad no Existe\n\nPresione ENTER para volver atras\n");
     std::cin.get();
     return false;
-    
-
     }
     else{
         system("clear");
-        printf("ERROR al ver si estas preinscrito en la acttividad\n\nPresione ENTER para volver atras\n");
+        printf("ERROR al ver si estas preinscrito en la actividad\n\nPresione ENTER para volver atras\n");
         std::cin.get();
         return false;
     }  
