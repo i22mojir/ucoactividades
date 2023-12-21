@@ -168,6 +168,45 @@ mail/fast:
 	$(MAKE) $(MAKESILENT) -f src/classes/mail/CMakeFiles/mail.dir/build.make src/classes/mail/CMakeFiles/mail.dir/build
 .PHONY : mail/fast
 
+#=============================================================================
+# Target rules for targets named user-test
+
+# Build rule for target.
+user-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 user-test
+.PHONY : user-test
+
+# fast build rule for target.
+user-test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/user-test.dir/build.make tests/CMakeFiles/user-test.dir/build
+.PHONY : user-test/fast
+
+#=============================================================================
+# Target rules for targets named mail-test
+
+# Build rule for target.
+mail-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mail-test
+.PHONY : mail-test
+
+# fast build rule for target.
+mail-test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/mail-test.dir/build.make tests/CMakeFiles/mail-test.dir/build
+.PHONY : mail-test/fast
+
+#=============================================================================
+# Target rules for targets named activity-test
+
+# Build rule for target.
+activity-test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 activity-test
+.PHONY : activity-test
+
+# fast build rule for target.
+activity-test/fast:
+	$(MAKE) $(MAKESILENT) -f tests/CMakeFiles/activity-test.dir/build.make tests/CMakeFiles/activity-test.dir/build
+.PHONY : activity-test/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -177,9 +216,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... activity"
+	@echo "... activity-test"
 	@echo "... mail"
+	@echo "... mail-test"
 	@echo "... ucoactividades"
 	@echo "... user"
+	@echo "... user-test"
 .PHONY : help
 
 

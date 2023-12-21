@@ -41,7 +41,7 @@ void Mail::ViewMail(User generated_user)
             size_t pos1 = it.path().filename().string().find(generated_user.GetEmail());
             size_t pos2 = it.path().filename().string().find(temp_interes); //AÑADIR TAMB INTERESES
 
-            printf("DEBUG: En comparacion de intereses: <%s> - <%s>\n", temp_interes.c_str(), it.path().filename().string().c_str());
+            //printf("DEBUG: En comparacion de intereses: <%s> - <%s>\n", temp_interes.c_str(), it.path().filename().string().c_str());
 
             if (pos1 != std::string::npos || pos2 != std::string::npos) //Se encuentra la subcadena en la cadena
             {

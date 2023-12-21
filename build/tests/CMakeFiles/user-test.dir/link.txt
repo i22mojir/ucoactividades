@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/user-test.dir/user-test.cc.o -o user-test  ../src/classes/user/libuser.a ../src/classes/mail/libmail.a ../src/classes/activity/libactivity.a ../src/classes/user/libuser.a ../src/classes/mail/libmail.a ../src/classes/activity/libactivity.a 

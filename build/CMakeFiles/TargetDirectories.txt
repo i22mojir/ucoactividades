@@ -16,3 +16,8 @@
 /mnt/c/Users/rafae/uni/ucoactividades/build/src/classes/mail/CMakeFiles/rebuild_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/data/CMakeFiles/edit_cache.dir
 /mnt/c/Users/rafae/uni/ucoactividades/build/data/CMakeFiles/rebuild_cache.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/tests/CMakeFiles/user-test.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/tests/CMakeFiles/mail-test.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/tests/CMakeFiles/activity-test.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/tests/CMakeFiles/edit_cache.dir
+/mnt/c/Users/rafae/uni/ucoactividades/build/tests/CMakeFiles/rebuild_cache.dir

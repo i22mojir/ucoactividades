@@ -235,8 +235,12 @@ src/classes/activity/CMakeFiles/activity.dir/activity.cc.o: ../src/classes/activ
   /usr/include/c++/11/fstream \
   /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
   /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
-  /usr/include/c++/11/bits/fstream.tcc
+  /usr/include/c++/11/bits/fstream.tcc \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
+
+/usr/include/string.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -673,6 +677,8 @@ src/classes/activity/CMakeFiles/activity.dir/activity.cc.o: ../src/classes/activ
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/strings.h:
 
 /usr/include/c++/11/bits/sstream.tcc:
 

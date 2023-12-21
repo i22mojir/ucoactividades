@@ -191,4 +191,5 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: \
  /usr/include/c++/11/bits/fstream.tcc \
  /mnt/c/Users/rafae/uni/ucoactividades/src/app/../classes/mail/../user/user.h \
  /mnt/c/Users/rafae/uni/ucoactividades/src/app/../classes/activity/activity.h \
- /mnt/c/Users/rafae/uni/ucoactividades/src/app/../classes/activity/../user/user.h
+ /mnt/c/Users/rafae/uni/ucoactividades/src/app/../classes/activity/../user/user.h \
+ /usr/include/string.h /usr/include/strings.h

@@ -17,6 +17,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "../src/classes/activity/CMakeLists.txt"
   "../src/classes/mail/CMakeLists.txt"
   "../src/classes/user/CMakeLists.txt"
+  "../tests/CMakeLists.txt"
   "/usr/share/cmake-3.22/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-3.22/Modules/CMakeCommonLanguageInclude.cmake"
@@ -51,6 +52,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "src/classes/user/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/classes/mail/CMakeFiles/CMakeDirectoryInformation.cmake"
   "data/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "tests/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -59,4 +61,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "src/classes/activity/CMakeFiles/activity.dir/DependInfo.cmake"
   "src/classes/user/CMakeFiles/user.dir/DependInfo.cmake"
   "src/classes/mail/CMakeFiles/mail.dir/DependInfo.cmake"
+  "tests/CMakeFiles/user-test.dir/DependInfo.cmake"
+  "tests/CMakeFiles/mail-test.dir/DependInfo.cmake"
+  "tests/CMakeFiles/activity-test.dir/DependInfo.cmake"
   )

@@ -6,6 +6,8 @@
     #include <filesystem>
     #include <fstream>
     #include <cstdlib>
+    #include <string.h>
+    #include <unistd.h>
     enum tipo{
         seminario,
         taller,
@@ -32,24 +34,27 @@
         std::string date_;
         std::string hour_;
         std::string clase_;
+        std::string speaker_;
         std::string price_;
         tipo ActType_;
         std::string ActivityVisuality_;
         public:
-        Actividad(std::string title= "\n", std::string description= "\n", std::string date= "\n", std::string hour= "\n", std::string clase= "\n", float price= 0.0);
+        Actividad(std::string title= "\n", std::string description= "\n", std::string date= "\n", std::string hour= "\n", std::string clase= "\n", std::string price= "0");
 
-        void VerInformacionActividad(std::string nombre_fichero_actividad);
+        void VerInformacionActividad(std::string nombre_fichero_actividad, int number);
         bool CrearActividad();
         bool PreInscribirse(User usuario, std::string nombre_fichero_actividad);
         void MostrarListaInscritos(std::string nombre_fichero_actividad);
         bool ModificarActividad(std::string nombre_fichero_actividad);
         bool EliminarPreInscripcion(User usuario, std::string nombre_fichero_actividad);
+        bool EstaPreInscrito(User usuario, std::string nombre_fichero_actividad);
 
         std::string GetTitle(){return title_;}
         std::string GetDescription(){return description_;}
         std::string GetHour(){return hour_;}
         std::string GetDate(){return date_;}
         std::string GetClass(){return clase_;}
+        std::string GetSpeaker(){return speaker_;}
         std::string GetPrice(){return price_;}
         tipo GetType(){return ActType_;}
         std::string GetVisuality(){return ActivityVisuality_;}
@@ -59,6 +64,7 @@
         void SetHour(std::string hour){hour_= hour;}
         void SetDate(std::string date){date_= date;}
         void SetClass(std::string clase){clase_= clase;}
+        void SetSpeaker(std::string speaker){speaker_= speaker;}
         void SetPrice(std::string price){price_= price;}
         void SetType(tipo ActType){ActType_= ActType;}
         void SetVisuality(std::string ActivityVisuality){ActivityVisuality_= ActivityVisuality;}

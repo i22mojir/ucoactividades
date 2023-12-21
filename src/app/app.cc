@@ -50,7 +50,7 @@ void MenuVerActividades(int user_is_registered, User generated_user)
     {
         if (fs::is_regular_file(it))
         {
-            std::cout<<"DEBUG it:"<<it.path().filename().string()<<"\n";
+            //std::cout<<"DEBUG it:"<<it.path().filename().string()<<"\n";
 
             if (it.path().filename().string() != "Actividades.txt")
             {
@@ -80,7 +80,6 @@ void MenuVerActividades(int user_is_registered, User generated_user)
     {
         system("clear");
         printf("(ERROR) Se ha especificado una actividad inexistente\n\nPresione ENTER para volver atras\n");
-        std::cin.get();
         return;
     }
     
@@ -142,7 +141,7 @@ void DetallesActividadSinRegistro(std::string nombre_fichero_actividad)
         {
         case '1':
             std::cin.ignore(1000, '\n');
-            generated_activity.VerInformacionActividad(nombre_fichero_actividad);
+            generated_activity.VerInformacionActividad(nombre_fichero_actividad, 0);
             break;
 
         case '2':
@@ -159,15 +158,21 @@ void DetallesActividadSinRegistro(std::string nombre_fichero_actividad)
 
 void DetallesActividadConRegistro(User generated_user, std::string nombre_fichero_actividad)
 {
+    Actividad generated_activity;
     char selected_option;
+    std::string status;
     while (true)
     {
-        Actividad generated_activity;
+        if (generated_activity.EstaPreInscrito(generated_user, nombre_fichero_actividad) == true)
+        {
+            status = "Inscrito";
+        }else{ status = "Sin Inscripcion";}
+
         system("clear");
         printf("*****************************\n*      VISTA DETALLADA      *\n*****************************\n");
         printf("Actividad seleccionada: %s como: %s\n\n", nombre_fichero_actividad.c_str(), generated_user.GetUserName().c_str());
 
-        printf("Acciones de actividad:\n1. Ver Informacion\n2. PreInscribirse en esta Actividad\n3. Eliminar PreInscripcion\n4. Volver al Menu\n");
+        printf("Acciones de actividad:\n1. Ver Informacion\n2. PreInscribirse en esta Actividad\n3. Eliminar PreInscripcion\n4. Volver al Menu\n\n(Estado de preinscripcion: [%s])\n", status.c_str());
         std::cin>>selected_option;
 
         if (isdigit(selected_option) == 0) //Si no es un numero no hace nada
@@ -179,7 +184,7 @@ void DetallesActividadConRegistro(User generated_user, std::string nombre_ficher
         {
         case '1':
             std::cin.ignore(1000, '\n');
-            generated_activity.VerInformacionActividad(nombre_fichero_actividad);
+            generated_activity.VerInformacionActividad(nombre_fichero_actividad, 0);
             break;
 
         case '2':
@@ -194,12 +199,6 @@ void DetallesActividadConRegistro(User generated_user, std::string nombre_ficher
                 printf("Se ha eliminado correctamente la preinscripcion\n");
                 std::cin.get();
             }
-            else
-            {
-                printf("ERROR en eliminacion de Preinscripcion\n");
-                std::cin.get();
-            }
-            
         break;
 
 
@@ -236,7 +235,7 @@ void DetallesActividadAdministracion(User generated_user, std::string nombre_fic
         {
         case '1':
             std::cin.ignore(1000, '\n');
-            generated_activity.VerInformacionActividad(nombre_fichero_actividad);
+            generated_activity.VerInformacionActividad(nombre_fichero_actividad, 0);
             break;
 
         case '2':
@@ -266,7 +265,7 @@ void CrearActividad()
 
     if (generated_activity.CrearActividad() == true)
     {
-        printf("La actividad se ha creado correctamente\n");
+        printf("La actividad se ha creado correctamente\n\nPulsa ENTER para volver atras\n");
         sleep(3);
         return;
     }else

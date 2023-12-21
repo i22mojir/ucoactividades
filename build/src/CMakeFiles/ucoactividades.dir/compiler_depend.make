@@ -240,7 +240,9 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o: ../src/app/app-main.cc \
   /usr/include/c++/11/bits/fstream.tcc \
   ../src/classes/user/user.h \
   ../src/classes/activity/activity.h \
-  ../src/classes/user/user.h
+  ../src/classes/user/user.h \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/stdc-predef.h \
@@ -481,8 +483,12 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
   /usr/include/c++/11/bits/fstream.tcc \
   ../src/classes/user/user.h \
   ../src/classes/activity/activity.h \
-  ../src/classes/user/user.h
+  ../src/classes/user/user.h \
+  /usr/include/string.h \
+  /usr/include/strings.h
 
+
+/usr/include/string.h:
 
 /usr/include/c++/11/bits/fstream.tcc:
 
@@ -927,6 +933,8 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o: ../src/app/app.cc \
 /usr/include/c++/11/bits/shared_ptr_base.h:
 
 /usr/include/x86_64-linux-gnu/bits/struct_mutex.h:
+
+/usr/include/strings.h:
 
 /usr/include/c++/11/bits/sstream.tcc:
 

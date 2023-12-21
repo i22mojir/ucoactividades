@@ -46,6 +46,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/mnt/c/Users/rafae/uni/ucoactividades/build/src/cmake_install.cmake")
   include("/mnt/c/Users/rafae/uni/ucoactividades/build/data/cmake_install.cmake")
+  include("/mnt/c/Users/rafae/uni/ucoactividades/build/tests/cmake_install.cmake")
 
 endif()
 

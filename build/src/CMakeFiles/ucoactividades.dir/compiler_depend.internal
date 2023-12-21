@@ -242,6 +242,8 @@ src/CMakeFiles/ucoactividades.dir/app/app-main.cc.o
  /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user/user.h
  /mnt/c/Users/rafae/uni/ucoactividades/src/classes/activity/activity.h
  /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user/user.h
+ /usr/include/string.h
+ /usr/include/strings.h
 
 src/CMakeFiles/ucoactividades.dir/app/app.cc.o
  /mnt/c/Users/rafae/uni/ucoactividades/src/app/app.cc
@@ -484,4 +486,6 @@ src/CMakeFiles/ucoactividades.dir/app/app.cc.o
  /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user/user.h
  /mnt/c/Users/rafae/uni/ucoactividades/src/classes/activity/activity.h
  /mnt/c/Users/rafae/uni/ucoactividades/src/classes/user/user.h
+ /usr/include/string.h
+ /usr/include/strings.h
 
