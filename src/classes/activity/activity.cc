@@ -148,7 +148,7 @@ bool Actividad::CrearActividad(){
     system("clear");
 
     printf("*****************************\n*   CREACION DE ACTIVIDAD   *\n*****************************\n");
-    std::cout<<"Paso (10/10): Quiere que sea visible para los demas usuarios?\nIndique (numero): 0 para no visible y 1 para visible"<<std::endl;
+    std::cout<<"Paso (10/10): ¿Quiere que sea visible para los demas usuarios?\nIndique (numero): 0 para no visible y 1 para visible"<<std::endl;
     std::cin>>ActivityVis_num;
     std::cin.ignore(1000, '\n');
     switch (ActivityVis_num)
